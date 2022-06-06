@@ -1,0 +1,27 @@
+﻿body {
+}
+
+#Print { 
+    visibility:visible; 
+   display: block; 
+}
+
+#NoPrint{ 
+   visibility:hidden; 
+   display: none; 
+} 
+
+#NoPrint2{ 
+   visibility:hidden; 
+   display: none; 
+} 
+
+#Header{ 
+   visibility:hidden; 
+   display: none; 
+} 
+
+#Menu{ 
+   visibility:hidden; 
+   display: none; 
+} 
