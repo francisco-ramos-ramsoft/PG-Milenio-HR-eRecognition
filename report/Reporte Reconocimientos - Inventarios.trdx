@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="sqlDataSource1" Width="19.0841656653517cm" Name="Reporte Reconocimientos - Inventarios" xmlns="http://schemas.telerik.com/reporting/2012/2">
+  <DataSources>
+    <SqlDataSource ConnectionString="Server" SelectCommand="SELECT * FROM vGifts" Name="sqlDataSource1" />
+  </DataSources>
+  <Items>
+    <ReportFooterSection Height="0.714374980129302cm" Name="reportFooter">
+      <Style Visible="True" />
+      <Items>
+        <TextBox Value="Grand total:" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="textBox1" StyleName="Caption">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Value="=Count(Fields.Name)" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="2.77166658003463cm, 0.0529166651947631cm" Name="nameCountFunctionTextBox" StyleName="Data" />
+        <TextBox Value="=Sum(Fields.Entry)" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="10.9279159208321cm, 0.0529166651947631cm" Name="entrySumFunctionTextBox" StyleName="Data" />
+        <TextBox Value="=Sum(Fields.Out)" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="13.6466662393941cm, 0.0529166651947631cm" Name="outSumFunctionTextBox" StyleName="Data" />
+        <TextBox Value="=Sum(Fields.Total)" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="totalSumFunctionTextBox" StyleName="Data" />
+      </Items>
+    </ReportFooterSection>
+    <PageHeaderSection Height="0.714374980129302cm" Name="pageHeader">
+      <Items>
+        <TextBox Value="Reporte Reconocimientos - Inventarios" Size="18.9783323349622cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="reportNameTextBox" StyleName="PageInfo" />
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.714374980129302cm" Name="pageFooter">
+      <Items>
+        <TextBox Value="=NOW()" Size="9.46270783488371cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Value="=PageNumber" Size="9.46270783488371cm, 0.6cm" Location="9.56854116527324cm, 0.0529166651947631cm" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="2.05291666519476cm" Name="reportHeader">
+      <Items>
+        <TextBox Value="Reporte Reconocimientos - Inventarios" Size="19.0841656653517cm, 2cm" Location="0cm, 0cm" Name="titleTextBox" StyleName="Title" />
+      </Items>
+    </ReportHeaderSection>
+    <DetailSection Height="0.714374980129302cm" Name="detail">
+      <Items>
+        <TextBox Value="=Fields.ID" CanGrow="True" Size="0.999999899069471cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="iDDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Name" CanGrow="True" Size="7.04999987383684cm, 0.6cm" Location="1.10000005046526cm, 0.0529166651947631cm" Name="nameDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Value" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="8.20916640971436cm, 0.0529166651947631cm" Name="valueDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Entry" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="10.9279159208321cm, 0.0529166651947631cm" Name="entryDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Out" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="13.6466662393941cm, 0.0529166651947631cm" Name="outDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Total" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="totalDataTextBox" StyleName="Data" />
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="28, 58, 112">
+        <Font Name="Tahoma" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False">
+      <Margins>
+        <MarginsU Left="12mm" Right="12mm" Top="12mm" Bottom="12mm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Groups>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.714374980129302cm" Name="labelsGroupHeader">
+          <Items>
+            <TextBox Value="ID" CanGrow="True" Size="1cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="iDCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Nombre" CanGrow="True" Size="7.05cm, 0.6cm" Location="1.1cm, 0.05cm" Name="nameCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Costo" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="8.20916640971436cm, 0.0529166651947631cm" Name="valueCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Entradas" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="10.9279159208321cm, 0.0529166651947631cm" Name="entryCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Salidas" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="13.6466662393941cm, 0.0529166651947631cm" Name="outCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Total" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="totalCaptionTextBox" StyleName="Caption" />
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.714374980129302cm" Name="labelsGroupFooter">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+</Report>

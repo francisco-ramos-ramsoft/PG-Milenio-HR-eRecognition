@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="sqlDataSource1" Width="22.7541660337481cm" Name="NewBlade" xmlns="http://schemas.telerik.com/reporting/2012/2">
+  <DataSources>
+    <SqlDataSource ConnectionString="RHRec" SelectCommand="dbo.RecognitionDetails" SelectCommandType="StoredProcedure" Name="sqlDataSource1">
+      <Parameters>
+        <SqlDataSourceParameter DbType="Int32" Name="@id">
+          <Value>
+            <String>2</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="0.714374980129302cm" Name="pageHeader">
+      <Items>
+        <TextBox Value="NewBlade" Size="22.6483327033586cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="reportNameTextBox" StyleName="PageInfo" />
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.714374980129302cm" Name="pageFooter">
+      <Items>
+        <TextBox Value="=NOW()" Size="11.2977080190819cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Value="=PageNumber" Size="11.2977080190819cm, 0.6cm" Location="11.4035413494715cm, 0.0529166651947631cm" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="0.985625171266491cm" Name="reportHeader">
+      <Items>
+        <TextBox Value="Nuevo Reconocimiento" Size="22.7541660337481cm, 0.985625171266491cm" Location="0cm, 0cm" Name="titleTextBox" StyleName="Title">
+          <Style>
+            <Font Name="Franklin Gothic Medium" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+    <DetailSection Height="15cm" Name="detail">
+      <Items>
+        <PictureBox Url="=&quot;http://mil-web002.na.pg.com/rh_rec/images/recs/&quot;+Fields.RecID+&quot;.png&quot;" MimeType="" Size="14cm, 7cm" Location="4.39999939441683cm, 0.685424874631667cm" Name="pictureBox1" />
+        <TextBox Value="Para:" Size="2.00000060558317cm, 0.600000504652645cm" Location="6.59999909162524cm, 7.73270850607173cm" Name="textBox1" />
+        <TextBox Value="= Fields.UserName" Size="9.04937471014014cm, 0.599999697208413cm" Location="9.35062327124928cm, 7.73270850607173cm" Name="textBox2" />
+        <TextBox Value="De:" Size="1.99999979813894cm, 0.599999697208413cm" Location="6.59999989906947cm, 8.53270810234961cm" Name="textBox3" />
+        <TextBox Value="= Fields.UserGive" Size="9.04937471014014cm, 0.599999697208413cm" Location="9.35062327124928cm, 8.53270810234961cm" Name="textBox4" />
+        <TextBox Value="= Fields.Rock" Size="9.0493745803833cm, 0.599999725818634cm" Location="9.35062246380505cm, 9.33270850607173cm" Name="textBox5" />
+        <TextBox Value="Roca:" Size="1.99999976158142cm, 0.599999725818634cm" Location="6.59999989906947cm, 9.33270850607173cm" Name="textBox6" />
+        <TextBox Value="= Fields.Reason" Size="9.0493745803833cm, 0.599999725818634cm" Location="9.35062246380505cm, 10.1327064874611cm" Name="textBox7" />
+        <TextBox Value="Motivo:" Size="1.99999976158142cm, 0.599999725818634cm" Location="6.59999989906947cm, 10.1327064874611cm" Name="textBox8" />
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="28, 58, 112">
+        <Font Name="Tahoma" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="True">
+      <Margins>
+        <MarginsU Left="25.4mm" Right="25.4mm" Top="25.4mm" Bottom="25.4mm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="ID" Type="Integer" Text="ID" AllowBlank="False" />
+  </ReportParameters>
+</Report>

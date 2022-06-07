@@ -1,0 +1,304 @@
+﻿.header {
+    height: 50px;
+    width: 1100px;
+    margin: auto;
+    /*border-bottom: solid #999999;*/
+    background-image: url('./img2/Sistemas Digitales-06-05.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header02 {
+    height: 50px;
+    /*background-image: url('./img/LogoMilenio_medium.png');*/
+    width: 200px;
+    background-repeat: no-repeat;
+}
+
+.header03 {
+    width: 600px;
+    font-weight: bolder;
+    font-family: Tahoma;
+    font-size: medium;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #0066cc;
+}
+
+.header04 {
+    width: 120px;
+    font-weight: bolder;
+    font-family: Tahoma;
+    font-size: small;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #737373;
+}
+
+.header05 {
+    width: 80px;
+}
+
+.header06 {
+    width: 150px;
+    font-weight: bolder;
+    font-family: Tahoma;
+    font-size: small;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #008ae6;
+}
+
+.header07 {
+    width: 200px;
+    font-weight: bolder;
+    font-family: Tahoma;
+    font-size: x-small;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #33adff;
+}
+
+.menu {
+    height: 60px;
+    width: 1100px;
+    margin: auto;
+}
+
+.menu1 {
+    width: 100%;
+}
+
+.menu2 {
+    width: auto;
+    color: #cceeff;
+    text-align: center;
+    font-family: Tahoma;
+    font-size: small;
+    border-left: solid;
+    border-right: solid;
+}
+
+.menu3 {
+    width: 100%;
+    height: 100%;
+}
+
+.body {
+    width: 1100px;
+    height: 510px;
+    margin: auto;
+}
+
+.footer {
+    width: 1280px;
+    height: 32px;
+    margin: auto;
+    background-image: url('./img/Blades-25.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+    bottom:0px;
+}
+
+.footer01 {
+    font-family: Tahoma;
+    font-size: x-small;
+    color: #4da6ff;
+    height: 30px;
+    width: 1000px;
+}
+
+.footer02 {
+    height: 30px;
+    width: 280px;
+    /*background-image:url('./img/touchinglives.jpg');*/
+    background-repeat: no-repeat;
+}
+
+.table {
+    align-content: center;
+    justify-content: center;
+    font-family: Tahoma;
+}
+
+.table_tittle {
+    text-align: center;
+    color: #006699;
+    font-weight: bold;
+    font-size: large;
+}
+
+.table_content {
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    color: #006699;
+}
+
+.innerMultiPage {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    position: relative;
+    margin-bottom: -3px;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-family: Tahoma;
+    font-size: small;
+    color: black;
+}
+
+.outerMultiPage {
+    height: 90%;
+    width: 593px;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-family: Tahoma;
+    border: solid;
+    border-width: thin;
+    border-color: black;
+}
+
+.border {
+    /*border:solid;
+    color:#d0e1e1;
+    width:100%;
+    height:100%;*/
+}
+
+.imgAdmin {
+    height: auto;
+    max-width: 100%;
+    image-resolution: 500dpi;
+}
+
+.IMGBanner {
+    height: 300px;
+    margin: 0px 35px 0px 35px;
+    float: left;
+    width: 480px;
+    border-radius: 3%;
+    /*box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.19), 0px 0px 6px 3px rgba(0, 0, 0, 0.25);*/
+}
+
+.ImgArticulo {
+    transition: transform .5s;
+}
+
+    .ImgArticulo:hover {
+        transform: scale(1.2);
+        image-resolution: 500dpi;
+        /*box-shadow: 0px 0px 10px 5px rgba(86, 172, 232, 0.19), 0px 0px 6px 3px rgba(86, 172, 232, 0.25);*/
+    }
+
+.zoom {
+    transition: transform .5s; /* Animation */
+}
+
+    .zoom:hover {
+        transform: scale(1.2) translate(30px); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        image-resolution:500dpi;
+    }
+
+.btn {
+    transition: transform .5s;
+}
+
+    .btn:hover {
+        /*box-shadow: 0px 0px 3px 3px rgba(86, 172, 232, 0.19), 0px 0px 1px 1px rgba(86, 172, 232, 0.25);*/
+        border-radius: 10px;
+        transform: scale(1.3);
+        image-resolution:500dpi;
+    }
+
+    .btn:active {
+        /*border-radius: 15px;*/
+        transform: translateY(5px);
+    }
+
+.btnShadow {
+    transition: transform .5s;
+}
+
+    .btnShadow:hover {
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.19), 0px 0px 7px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .btnShadow:active {
+        /*box-shadow: 0px 0px 10px 5px rgba(86, 172, 232, 0.19), 0px 0px 7px 3px rgba(86, 172, 232, 0.25);*/
+        transform: scale(1.1);
+    }
+
+.btnInfo {
+    transition: transform .5s;
+}
+
+    .btnInfo:hover {
+        box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.19), 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+        
+    }
+
+    .btnInfo:active {
+        transform: scale(1.2);
+    }
+
+.btnPDF {
+    transition: transform .5s;
+}
+
+    .btnPDF:hover {
+        /*box-shadow: 0px 0px 8px 4px rgba(140, 198, 62, 0.19), 0px 0px 4px 2px rgba(140, 198, 62, 0.25);*/
+        transform: translateY(-7px);
+    }
+
+    .btnPDF:active {
+        /*transform: scale(1.2);*/
+        transform: translateY(7px);
+    }
+
+
+.imgShare:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 1.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {transform: rotate(4deg) scale(1.2);}
+
+     10% {
+        transform: rotate(16deg) scale(1.2);
+    }
+
+    20% {
+        transform: rotate(4deg) scale(1.2);
+    }
+
+    30% {
+        transform: rotate(16deg) scale(1.2);
+    }
+
+    40% {transform: rotate(4deg) scale(1.2);}
+
+    50% {
+        transform: rotate(16deg) scale(1.2);
+    }
+
+    60% {transform: rotate(4deg) scale(1.2);}
+
+    70% {
+        transform: rotate(16deg) scale(1.2);
+    }
+
+    80% {transform: rotate(4deg) scale(1.2);}
+
+    90% {
+        transform: rotate(16deg) scale(1.2);
+    }
+
+    100% {transform: rotate(4deg) scale(1.2);}
+}

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="sqlDataSource1" Width="19.0841656653517cm" Name="Reconocimientos por Managers" xmlns="http://schemas.telerik.com/reporting/2012/2">
+  <DataSources>
+    <SqlDataSource ConnectionString="RHRec" SelectCommand="dbo.rRecognitionDetails" SelectCommandType="StoredProcedure" Name="sqlDataSource1">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@UG">
+          <Value>
+            <String>=Parameters.UG.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <ReportFooterSection Height="0.714374980129302cm" Name="reportFooter">
+      <Style Visible="True">
+        <BorderStyle Top="Double" />
+      </Style>
+      <Items>
+        <TextBox Value="TOTAL" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="textBox1" StyleName="Caption">
+          <Style TextAlign="Right" />
+        </TextBox>
+        <TextBox Value="=Count(Fields.UserName)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="5.4904164948745cm, 0.0529166651947631cm" Name="userNameCountFunctionTextBox2" StyleName="Data" />
+        <TextBox Value="=Sum(Fields.RecValue)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="recValueSumFunctionTextBox2" StyleName="Data" />
+      </Items>
+    </ReportFooterSection>
+    <PageHeaderSection Height="0.714374980129302cm" Name="pageHeader">
+      <Items>
+        <TextBox Value="Reconocimientos por Managers" Size="18.9783323349622cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="reportNameTextBox" StyleName="PageInfo" />
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.714374980129302cm" Name="pageFooter">
+      <Items>
+        <TextBox Value="=NOW()" Size="9.46270783488371cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="currentTimeTextBox" StyleName="PageInfo" />
+        <TextBox Value="=PageNumber" Size="9.46270783488371cm, 0.6cm" Location="9.56854116527324cm, 0.0529166651947631cm" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="2.05291666519476cm" Name="reportHeader">
+      <Items>
+        <TextBox Value="Reconocimientos por Managers" Size="19.0841656653517cm, 2cm" Location="0cm, 0cm" Name="titleTextBox" StyleName="Title" />
+      </Items>
+    </ReportHeaderSection>
+    <DetailSection Height="0.714374980129302cm" Name="detail">
+      <Items>
+        <TextBox Value="=Fields.UserName" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="5.4904164948745cm, 0.0529166651947631cm" Name="userNameDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Rock" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="8.20916640971436cm, 0.0529166651947631cm" Name="rockDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.Reason" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="10.9279159208321cm, 0.0529166651947631cm" Name="reasonDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.timestamp" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="13.6466662393941cm, 0.0529166651947631cm" Name="timestampDataTextBox" StyleName="Data" />
+        <TextBox Value="=Fields.RecValue" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="recValueDataTextBox" StyleName="Data" />
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="28, 58, 112">
+        <Font Name="Tahoma" Size="18pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="28, 58, 112" Color="White" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False">
+      <Margins>
+        <MarginsU Left="12mm" Right="12mm" Top="12mm" Bottom="12mm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Groups>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.714374980129302cm" Name="labelsGroupHeader">
+          <Items>
+            <TextBox Value="Generó" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="userGiveCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Reconocimiento" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="2.77166658003463cm, 0.0529166651947631cm" Name="recNameCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Empleado" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="5.4904164948745cm, 0.0529166651947631cm" Name="userNameCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Roca" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="8.20916640971436cm, 0.0529166651947631cm" Name="rockCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Motivo" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="10.9279159208321cm, 0.0529166651947631cm" Name="reasonCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Fecha" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="13.6466662393941cm, 0.0529166651947631cm" Name="timestampCaptionTextBox" StyleName="Caption" />
+            <TextBox Value="Puntos" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="recValueCaptionTextBox" StyleName="Caption" />
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.714374980129302cm" Name="labelsGroupFooter">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+    <Group Name="userGiveGroup">
+      <Groupings>
+        <Grouping Expression="=Fields.UserGive" />
+      </Groupings>
+      <GroupHeader>
+        <GroupHeaderSection Height="0.714374980129302cm" Name="userGiveGroupHeader">
+          <Style>
+            <BorderStyle Top="Dotted" />
+          </Style>
+          <Items>
+            <TextBox Value="=Fields.UserGive" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="userGiveDataTextBox" StyleName="Data" />
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.714374980129302cm" Name="userGiveGroupFooter">
+          <Style>
+            <BorderStyle Top="Solid" />
+          </Style>
+          <Items>
+            <TextBox Value="Sub-total:" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="0.0529166651947631cm, 0.0529166651947631cm" Name="textBox2" StyleName="Caption">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Value="=Count(Fields.UserName)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="5.4904164948745cm, 0.0529166651947631cm" Name="userNameCountFunctionTextBox" StyleName="Data" />
+            <TextBox Value="=Sum(Fields.RecValue)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="recValueSumFunctionTextBox" StyleName="Data" />
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+    <Group Name="recNameGroup">
+      <Groupings>
+        <Grouping Expression="=Fields.RecName" />
+      </Groupings>
+      <GroupHeader>
+        <GroupHeaderSection Height="0.714374980129302cm" Name="recNameGroupHeader">
+          <Items>
+            <TextBox Value="=Fields.RecName" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="2.77166658003463cm, 0.0529166651947631cm" Name="recNameDataTextBox" StyleName="Data" />
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.714374980129302cm" Name="recNameGroupFooter">
+          <Style>
+            <BorderStyle Top="Dashed" />
+          </Style>
+          <Items>
+            <TextBox Value="Sub-total:" CanGrow="True" Size="2.66583319197051cm, 0.6cm" Location="2.77166658003463cm, 0.0529166651947631cm" Name="textBox3" StyleName="Caption">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Value="=Count(Fields.UserName)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="5.4904164948745cm, 0.0529166651947631cm" Name="userNameCountFunctionTextBox1" StyleName="Data" />
+            <TextBox Value="=Sum(Fields.RecValue)" CanGrow="True" Size="2.66583316890068cm, 0.6cm" Location="16.3654165579561cm, 0.0529166651947631cm" Name="recValueSumFunctionTextBox1" StyleName="Data" />
+          </Items>
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="UG" Text="UG" />
+  </ReportParameters>
+</Report>

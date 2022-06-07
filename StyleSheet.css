@@ -1,0 +1,164 @@
+﻿        .header {
+            height: 50px;
+            width:1280px;
+            margin:auto;
+            /*border-bottom: solid #999999;*/
+            background-image: url('./img/Blades-05.png');
+            background-size:cover;
+        }
+        .header02 {
+            height: 50px;
+            /*background-image: url('./img/LogoMilenio_medium.png');*/
+            width: 200px;
+            background-repeat: no-repeat;
+        } 
+        .header03 {
+            width: 600px;
+            font-weight:bolder;
+            font-family: Tahoma; 
+            font-size: medium; 
+            font-weight: bold; 
+            text-transform: capitalize; 
+            color: #0066cc;
+        }
+        .header04 {
+            width: 120px;
+            font-weight:bolder;
+            font-family: Tahoma; 
+            font-size: small; 
+            font-weight: bold; 
+            text-transform: capitalize; 
+            color: #737373;
+        }       
+        .header05 {
+            width: 100px;
+        }
+
+        .header06 {
+            width: 200px;
+            font-weight:bolder;
+            font-family: Tahoma; 
+            font-size: small; 
+            font-weight: bold; 
+            text-transform: capitalize; 
+            color: #008ae6;
+        }
+
+        .header07 {
+            width: 200px;
+            font-weight:bolder;
+            font-family: Tahoma; 
+            font-size: x-small;
+            font-weight: bold; 
+            text-transform: capitalize; 
+            color: #33adff;
+        }
+
+        .menu { 
+            height: 20px;
+            width:1280px;
+            margin:auto;
+            border-bottom: solid #999999;
+        }
+        .menu1 { 
+            width:100%;
+
+        }
+        .menu2 { 
+            width:auto;
+            color:#cceeff;
+            text-align:center;
+            font-family: Tahoma; 
+            font-size: small;
+            border-left:solid;
+            border-right:solid;
+        }
+        .menu3 { 
+            width:100%;
+            height:100%;
+        }
+        .body {
+            width:1280px;
+            height: 600px;
+            margin:auto;
+            background-color: #e6e6e6;
+            background-image: url('./img/Blades-02.png');
+            background-size:cover;
+        }
+
+        .footer {
+            width:1280px;
+            height: 32px;
+            margin:auto;
+            background-image: url('./img/Blades-25.png');
+            background-size:cover;
+        }
+
+        .footer01 {
+            font-family: Tahoma; 
+            font-size: x-small;
+            color: #4da6ff;
+            height: 30px;
+            width: 1000px;
+        }
+
+        .footer02 {
+            height: 30px;
+            width: 280px;
+            /*background-image:url('./img/touchinglives.jpg');*/
+            background-repeat:no-repeat;
+        }
+        
+.table { 
+    width:100%;
+    align-content:center;
+    justify-content:center;    
+    font-family: Tahoma; 
+}
+
+.table_tittle { 
+    text-align:center;
+    color:#006699;
+    font-weight:bold;
+    font-size:large;
+}
+
+.table_content { 
+    text-align:center;
+    align-content:center;
+    justify-content:center;
+    vertical-align:middle;
+    align-items:center;
+    color:#006699;
+}
+
+.innerMultiPage {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    position: relative;
+    margin-bottom: -3px;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-family: Tahoma; 
+    font-size:small;
+    color:black;
+}
+
+.outerMultiPage {
+    height: 90%;
+    width: 593px;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-family: Tahoma; 
+    border:solid;
+    border-width:thin;
+    border-color:black;
+}
+
+.border { 
+    border:solid;
+    color:#d0e1e1;
+    width:100%;
+    height:100%;
+}
