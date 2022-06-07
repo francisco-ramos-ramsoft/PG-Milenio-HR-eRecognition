@@ -1,27 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31624.102
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RH_Rec", ".", "{01AD85F5-39AC-44A2-B2BF-77C77DF70748}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/RH_Rec"
-		Debug.AspNetCompiler.PhysicalPath = "..\RH_Rec\"
+		Debug.AspNetCompiler.PhysicalPath = "G:\data\inetpub\wwwroot\RH_Rec\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\RH_Rec\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/RH_Rec"
-		Release.AspNetCompiler.PhysicalPath = "..\RH_Rec\"
+		Release.AspNetCompiler.PhysicalPath = "G:\data\inetpub\wwwroot\RH_Rec\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\RH_Rec\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56416"
-		SlnRelativePath = "..\RH_Rec\"
 	EndProjectSection
 EndProject
 Global
@@ -34,8 +31,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E8942AA6-A9F3-4EB9-BA40-183397F753D1}
 	EndGlobalSection
 EndGlobal

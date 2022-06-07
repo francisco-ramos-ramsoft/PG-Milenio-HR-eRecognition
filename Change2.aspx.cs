@@ -16,12 +16,12 @@ public partial class Change2 : System.Web.UI.Page
 
     private void SetButton()
     {
-        bool change = false;
-        int cost = 0;
-        if (lblCost.Text != "")
-            cost = Convert.ToInt32(lblCost.Text);
+        bool change=false;
+        int cost=0;
+        if (lblCost.Text!="")
+            cost=Convert.ToInt32(lblCost.Text);
         int points = 0;
-        if (lblPoints.Text != "")
+        if (lblPoints.Text!="")
             points = Convert.ToInt32(lblPoints.Text);
         int qty = 0;
         if (lblQty.Text != "")
@@ -35,7 +35,7 @@ public partial class Change2 : System.Web.UI.Page
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
         SqlCommand objCmd = new SqlCommand();
-        objCmd.CommandText = "Select * From vUsers Where ID=" + cbbEmpl.SelectedValue.ToString(); ;
+        objCmd.CommandText = "Select * From vUsers Where ID=" + cbbEmpl.SelectedValue.ToString();;
         objCmd.Connection = objConn;
         try
         {
@@ -46,7 +46,7 @@ public partial class Change2 : System.Web.UI.Page
                 if (dr.Read())
                 {
                     lblMail.Text = dr.GetString(3);
-                    lblNumEmp.Text = dr.GetInt32(1).ToString();
+                    lblNumEmp.Text = dr.GetInt32(1).ToString(); 
                     lblPoints.Text = dr.GetInt32(5).ToString();
                 }
             }
@@ -75,7 +75,7 @@ public partial class Change2 : System.Web.UI.Page
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
         SqlCommand objCmd = new SqlCommand();
-        objCmd.CommandText = "Select * From vGiftsCanje Where ID=" + cbbGifts.SelectedValue.ToString();
+        objCmd.CommandText = "Select * From vGifts Where ID=" + cbbGifts.SelectedValue.ToString(); 
         objCmd.Connection = objConn;
         try
         {
@@ -123,7 +123,7 @@ public partial class Change2 : System.Web.UI.Page
         int iRecID = 0;
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["Server"].ConnectionString);
         SqlCommand objCmd = new SqlCommand();
-        objCmd.CommandText = "EXEC [NewChange] @Usr = " + cbbEmpl.SelectedValue.ToString() + ", @Gft=" + cbbGifts.SelectedValue.ToString();
+        objCmd.CommandText = "EXEC [NewChange] @Usr = " + cbbEmpl.SelectedValue.ToString() + ", @Gft=" + cbbGifts.SelectedValue.ToString(); 
         objCmd.Connection = objConn;
         try
         {

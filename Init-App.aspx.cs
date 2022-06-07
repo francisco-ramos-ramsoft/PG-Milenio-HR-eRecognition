@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -20,14 +20,7 @@ public partial class Init_App : System.Web.UI.Page
         Session["UserKeyAccess"] = Request.QueryString["UserKeyAccess"];
         Session["CurrentToken"] = Request.QueryString["CurrentToken"];
 
-        //Session["UserName"] = "galvan.jg";
-        //Session["UserKeyAccess"] = "807dbc33-a883-4c76-87af-06db0de11e72";
-        //Session["CurrentToken"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdhbHZhbi5qZyIsImlhdCI6MTYzMjUxMzkyOCwiZXhwIjoxNjMyNTE3NTI4fQ.72B1Cf2lSoiQKMQjKwhXERN_YwB2Xq5o-maI161VJzw";
-
-        //Session["UserName"] = "acosta.va";
-        //Session["UserKeyAccess"] = "7336cbae-7d08-4bb6-3ba2-84aff394f0a9";
-        //Session["CurrentToken"] = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFjb3N0YS52YSIsImlhdCI6MTYzMjc1Mzg1MSwiZXhwIjoxNjMyNzU3NDUxfQ.l3zXwq7tYNh14dqMR704GPrhlzW2pXLd8iioE9KWGRM";
-
+       
         //lanzar el proceso de Refresh
         if (!Page.IsPostBack)
         {
@@ -70,7 +63,7 @@ public partial class Init_App : System.Web.UI.Page
 
 
                 //ir a la app
-                //Response.Redirect(ConfigurationManager.AppSettings["UrlAppHomePage"]);
+               // Response.Redirect(ConfigurationManager.AppSettings["UrlAppHomePage"]);
 
                 sLogin = userName.ToString();
                 Session["Intranet"] = userName.ToString();
@@ -162,39 +155,39 @@ public partial class Init_App : System.Web.UI.Page
             //}
             //else
             //{
-            //Usuario Valido si Exixte en Intranet
-            //Login = "hernandez.s.49";
-            clsLogin LogCheck = new clsLogin(Login);
-            if (LogCheck.Error == "Ok")
-            {
-                Session["UserID"] = LogCheck.UserID;
-                Session["UserNum"] = LogCheck.UserNum;
-                Session["UserMail"] = LogCheck.UserMail;
-                //Session["UserName"] = LogCheck.UserName;
-                Session["UserRol"] = LogCheck.UserRol;
-                Session["UserAdmin"] = LogCheck.UserAdmin;
-                Session["UserActive"] = LogCheck.UserActive;
-                Session["UserRecs"] = LogCheck.UserRecs;
-                if (LogCheck.UserMail != "fastenal.df.1")
+                //Usuario Valido si Exixte en Intranet
+                //Login = "hernandez.s.49";
+                clsLogin LogCheck = new clsLogin(Login);
+                if (LogCheck.Error == "Ok")
                 {
-                    Response.Redirect(ConfigurationManager.AppSettings["UrlAppHomePage"], false);
-                    //Response.Redirect("Main.aspx");
+                    Session["UserID"] = LogCheck.UserID;
+                    Session["UserNum"] = LogCheck.UserNum;
+                    Session["UserMail"] = LogCheck.UserMail;
+                    //Session["UserName"] = LogCheck.UserName;
+                    Session["UserRol"] = LogCheck.UserRol;
+                    Session["UserAdmin"] = LogCheck.UserAdmin;
+                    Session["UserActive"] = LogCheck.UserActive;
+                    Session["UserRecs"] = LogCheck.UserRecs;
+                    if (LogCheck.UserMail != "fastenal.df.1")
+                    {
+                        Response.Redirect(ConfigurationManager.AppSettings["UrlAppHomePage"],false);
+                        //Response.Redirect("Main.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect(ConfigurationManager.AppSettings["UrlAppFastenalPage"],false);
+                        //Response.Redirect("Change2.aspx");
+                    }
                 }
                 else
                 {
-                    Response.Redirect(ConfigurationManager.AppSettings["UrlAppFastenalPage"], false);
-                    //Response.Redirect("Change2.aspx");
+                    //Cuando el usuario no esta registrado en el sistema.
+                    //hlRedirect.NavigateUrl = ConfigurationManager.AppSettings["UrlAppEndPage"];
+                    //txbLogin.Text = String.Empty;
+                    //txbPass.Text = String.Empty;
+                    //txbLogin.Focus();
+                    //lblNoUserIntranet.Text = LogCheck.Error;
                 }
-            }
-            else
-            {
-                //Cuando el usuario no esta registrado en el sistema.
-                //hlRedirect.NavigateUrl = ConfigurationManager.AppSettings["UrlAppEndPage"];
-                //txbLogin.Text = String.Empty;
-                //txbPass.Text = String.Empty;
-                //txbLogin.Focus();
-                //lblNoUserIntranet.Text = LogCheck.Error;
-            }
             //}
         }
         catch (Exception ex)

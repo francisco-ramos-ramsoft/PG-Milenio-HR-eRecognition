@@ -1,18 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Reports.aspx.cs" Inherits="Reports" %>
 
-
-<%@ Register Assembly="Telerik.ReportViewer.WebForms, Version=15.2.21.915, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" Namespace="Telerik.ReportViewer.WebForms" TagPrefix="telerik" %>
+<%@ Register Assembly="Telerik.ReportViewer.WebForms, Version=6.2.12.1017, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" Namespace="Telerik.ReportViewer.WebForms" TagPrefix="telerik" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server"> 
     </telerik:RadCodeBlock>
 </asp:Content>
-
-
-
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentReports" runat="Server">
-
     <script type="text/javascript">
         function mngRequestStarted(ajaxManager, eventArgs) {
             debugger;
@@ -30,8 +25,7 @@
                 eventArgs.EnableAjax = false;
             }
         }
-
-    </script>
+            </script> 
     <table>
         <tr>
             <td>
@@ -65,55 +59,34 @@
                                             </telerik:RadDatePicker>
                                         </td>
                                     </tr>
-
                                 </table>
                             </div>
                             <div runat="server" id="pnlBlades">
                                 <table>
                                     <tr>
                                         <td>Nombre:</td>
-                                        <td>
-                                            <telerik:RadTextBox runat="server" ID="Name"></telerik:RadTextBox>
-                                        </td>
+                                        <td><telerik:RadTextBox runat="server" ID="Name" ></telerik:RadTextBox></td>
                                         <td>Mes:</td>
-                                        <td>
-                                            <telerik:RadNumericTextBox runat="server" ID="Month" MinValue="0">
-                                                <NumberFormat GroupSeparator="" DecimalDigits="0" />
-                                            </telerik:RadNumericTextBox>
-                                        </td>
+                                        <td><telerik:RadNumericTextBox runat="server" ID="Month" minvalue="0"><NumberFormat GroupSeparator="" DecimalDigits="0" /></telerik:RadNumericTextBox></td>
                                     </tr>
                                 </table>
                             </div>
                             <div runat="server" id="pnlTotals">
                                 <table>
                                     <tr>
-                                        <td>
-                                            <asp:Label runat="server" ID="lblTotals" Text="Año Corriente"></asp:Label></td>
-                                        <td>
-                                            <telerik:RadButton runat="server" ID="RadTotalsYear" OnClick="RadTotalsYear_Click" Text="Mandar Reporte"></telerik:RadButton>
-                                        </td>
-                                        <td>
-                                            <asp:Label runat="server" ID="Label1" Text="Año Pasado"></asp:Label></td>
-                                        <td>
-                                            <telerik:RadButton runat="server" ID="RadTotalsLastYear" OnClick="RadTotalsLastYear_Click" Text="Mandar Reporte"></telerik:RadButton>
-                                        </td>
+                                        <td><asp:label runat="server" ID="lblTotals" Text="Año Corriente"></asp:label></td>
+                                        <td><telerik:RadButton runat="server" ID="RadTotalsYear" OnClick="RadTotalsYear_Click" Text="Mandar Reporte"></telerik:RadButton></td>
+                                        <td><asp:label runat="server" ID="Label1" Text="Año Pasado"></asp:label></td>
+                                        <td><telerik:RadButton runat="server" ID="RadTotalsLastYear" OnClick="RadTotalsLastYear_Click" Text="Mandar Reporte" ></telerik:RadButton></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <asp:Label runat="server" ID="Label2" Text="Mes Corriente"></asp:Label></td>
-                                        <td>
-                                            <telerik:RadButton runat="server" ID="RadTotalsMonth" OnClick="RadTotalsMonth_Click" Text="Mandar Reporte"></telerik:RadButton>
-                                        </td>
-                                        <td>
-                                            <asp:Label runat="server" ID="Label3" Text="Mes Pasado"></asp:Label></td>
-                                        <td>
-                                            <telerik:RadButton runat="server" ID="RadTotalsLastMonth" OnClick="RadTotalsLastMonth_Click" Text="Mandar Reporte"></telerik:RadButton>
-                                        </td>
+                                        <td><asp:label runat="server" ID="Label2" Text="Mes Corriente"></asp:label></td>
+                                        <td><telerik:RadButton runat="server" ID="RadTotalsMonth" OnClick="RadTotalsMonth_Click" Text="Mandar Reporte" ></telerik:RadButton></td>
+                                        <td><asp:label runat="server" ID="Label3" Text="Mes Pasado"></asp:label></td>
+                                        <td><telerik:RadButton runat="server" ID="RadTotalsLastMonth" OnClick="RadTotalsLastMonth_Click" Text="Mandar Reporte"></telerik:RadButton></td>
                                     </tr>
-
                                 </table>
                             </div>
-
                         </td>
                     </tr>
                     <tr>
@@ -124,7 +97,7 @@
                                         <td>Manager:</td>
                                         <td>
                                             <telerik:RadComboBox ID="RadComboBox2" HighlightTemplatedItems="True" Filter="Contains" Width="250px" runat="server" DataSourceID="dsManagers" DataTextField="Name" DataValueField="Name" Skin="Metro" Height="300px"></telerik:RadComboBox>
-                                            <asp:SqlDataSource ID="dsManagers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="Select '_Todos' Name Union select Name from vUsers where rol='Administrador'"></asp:SqlDataSource>
+                                            <asp:SqlDataSource ID="dsManagers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="Select '_Todos' Name Union select Name from vUsers where rol = 'Admin'"></asp:SqlDataSource>
                                         </td>
                                     </tr>
                                 </table>
@@ -132,7 +105,6 @@
                         </td>
                     </tr>
                 </table>
-
             </td>
             <td>
                 <telerik:RadButton ID="RadButton1" runat="server" Text="Ver Reporte" OnClick="RadButton1_Click" Skin="MetroTouch" Width="150px"></telerik:RadButton>
@@ -213,7 +185,7 @@
                     <SelectParameters>
                         <asp:Parameter Name="UG" Type="String" />
                         <asp:Parameter Name="B" Type="String" />
-                        <asp:Parameter Name="E" Type="String" />
+                        <asp:Parameter  Name="E" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
 
@@ -281,7 +253,7 @@
                 <asp:SqlDataSource ID="dsGrdRecognitions" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="rRecognitionDetails2" SelectCommandType="StoredProcedure">
                     <SelectParameters>
                         <asp:Parameter Name="B" Type="String" />
-                        <asp:Parameter Name="E" Type="String" />
+                        <asp:Parameter  Name="E" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
 
@@ -370,7 +342,7 @@
                 <asp:SqlDataSource ID="dsGrdExchange" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="rGiftsExchance" SelectCommandType="StoredProcedure">
                     <SelectParameters>
                         <asp:Parameter Name="B" Type="String" />
-                        <asp:Parameter Name="E" Type="String" />
+                        <asp:Parameter  Name="E" Type="String" />
                     </SelectParameters>
                 </asp:SqlDataSource>
 
@@ -407,8 +379,8 @@
                     <FilterMenu EnableImageSprites="False"></FilterMenu>
                 </telerik:RadGrid>
                 <asp:SqlDataSource ID="dsGrdLogPrint" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT * FROM [vLogPrint]"></asp:SqlDataSource>
-
-                <telerik:RadGrid ID="GrdBlades" runat="server" CellSpacing="0" DataSourceID="dsBlades" GridLines="None" Skin="Metro" Height="400px" Width="1050px" ShowFooter="True">
+               
+                 <telerik:RadGrid ID="GrdBlades" runat="server" CellSpacing="0" DataSourceID="dsBlades" GridLines="None" Skin="Metro" Height="400px" Width="1050px" ShowFooter="True">
                     <ClientSettings>
                         <Selecting AllowRowSelect="True" />
                         <Scrolling AllowScroll="True" UseStaticHeaders="True" />
@@ -419,7 +391,7 @@
                             <HeaderStyle Width="20px"></HeaderStyle>
                         </RowIndicatorColumn>
                         <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                            <HeaderStyle Width="200px"></HeaderStyle>
+                            <HeaderStyle Width="20px"></HeaderStyle>
                         </ExpandCollapseColumn>
                         <Columns>
                             <telerik:GridBoundColumn DataField="Id" FilterControlAltText="Filter Id column" HeaderText="Transaccion" SortExpression="Id" UniqueName="Id"
@@ -449,85 +421,84 @@
                 </telerik:RadGrid>
                 <asp:SqlDataSource ID="dsBlades" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="GetBlades" SelectCommandType="StoredProcedure">
                     <SelectParameters>
-                        <asp:Parameter Name="Name" DbType="String" />
-                        <asp:Parameter Name="Month" DbType="Int32" />
+                        <asp:Parameter Name="Name"  DbType="String"  />
+                        <asp:Parameter Name="Month"  DbType="Int32" />
                     </SelectParameters>
                 </asp:SqlDataSource>
 
-                <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server" ClientEvents-OnRequestStart="mngRequestStarted" DefaultLoadingPanelID="RadAjaxLoadingPanel1">
-                    <AjaxSettings>
-                        <telerik:AjaxSetting AjaxControlID="grdManagers">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdManagers" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="grdRecognitios">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="GrdBlades">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="GrdBlades" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="grdInventory">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdInventory" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="grdExchange">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdExchange" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="grdLogPrint">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="RadButton2">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdManagers" />
-                                <telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
-                                <telerik:AjaxUpdatedControl ControlID="grdInventory" />
-                                <telerik:AjaxUpdatedControl ControlID="grdExchange" />
-                                <telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
-                                <telerik:AjaxUpdatedControl ControlID="GrdBlades" />
-                                <telerik:AjaxUpdatedControl ControlID="RadButton2" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="RadButton1">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="grdManagers" />
-                                <telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
-                                <telerik:AjaxUpdatedControl ControlID="grdInventory" />
-                                <telerik:AjaxUpdatedControl ControlID="grdExchange" />
-                                <telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
-                                <telerik:AjaxUpdatedControl ControlID="GrdBlades" />
-                                <telerik:AjaxUpdatedControl ControlID="RadButton1" />
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="Panel1">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="Panel1" LoadingPanelID="RadAjaxLoadingPanel1"></telerik:AjaxUpdatedControl>
-                                <telerik:AjaxUpdatedControl ControlID="ConfigurationPanel1" LoadingPanelID="RadAjaxLoadingPanel2"></telerik:AjaxUpdatedControl>
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                        <telerik:AjaxSetting AjaxControlID="ConfigurationPanel1">
-                            <UpdatedControls>
-                                <telerik:AjaxUpdatedControl ControlID="RadAjaxLoadingPanel1" LoadingPanelID="RadAjaxLoadingPanel1"></telerik:AjaxUpdatedControl>
-                                <telerik:AjaxUpdatedControl ControlID="ConfigurationPanel1" LoadingPanelID="RadAjaxLoadingPanel2"></telerik:AjaxUpdatedControl>
-                            </UpdatedControls>
-                        </telerik:AjaxSetting>
-                    </AjaxSettings>
-                    <ClientEvents OnRequestStart="mngRequestStarted" />
-                </telerik:RadAjaxManager>
+                 <Telerik:RadAjaxManager ID="RadAjaxManager1" runat="server" ClientEvents-OnRequestStart="mngRequestStarted" DefaultLoadingPanelID="RadAjaxLoadingPanel1" >
+                <AjaxSettings>
+                    <Telerik:AjaxSetting AjaxControlID="grdManagers">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdManagers" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="grdRecognitios">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="GrdBlades">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="GrdBlades" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="grdInventory">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdInventory" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="grdExchange">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdExchange" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="grdLogPrint">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="RadButton2">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdManagers" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdInventory" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdExchange" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
+                            <Telerik:AjaxUpdatedControl ControlID="GrdBlades" />
+                            <Telerik:AjaxUpdatedControl ControlID="RadButton2" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <Telerik:AjaxSetting AjaxControlID="RadButton1">
+                        <UpdatedControls>
+                            <Telerik:AjaxUpdatedControl ControlID="grdManagers" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdRecognitios" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdInventory" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdExchange" />
+                            <Telerik:AjaxUpdatedControl ControlID="grdLogPrint" />
+                            <Telerik:AjaxUpdatedControl ControlID="GrdBlades" />
+                            <Telerik:AjaxUpdatedControl ControlID="RadButton1" />
+                        </UpdatedControls>
+                    </Telerik:AjaxSetting>
+                    <telerik:AjaxSetting AjaxControlID="Panel1">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="Panel1" LoadingPanelID="RadAjaxLoadingPanel1"></telerik:AjaxUpdatedControl>
+                        <telerik:AjaxUpdatedControl ControlID="ConfigurationPanel1" LoadingPanelID="RadAjaxLoadingPanel2"></telerik:AjaxUpdatedControl>
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+                <telerik:AjaxSetting AjaxControlID="ConfigurationPanel1">
+                    <UpdatedControls>
+                        <telerik:AjaxUpdatedControl ControlID="RadAjaxLoadingPanel1" LoadingPanelID="RadAjaxLoadingPanel1"></telerik:AjaxUpdatedControl>
+                        <telerik:AjaxUpdatedControl ControlID="ConfigurationPanel1" LoadingPanelID="RadAjaxLoadingPanel2"></telerik:AjaxUpdatedControl>
+                    </UpdatedControls>
+                </telerik:AjaxSetting>
+                </AjaxSettings>
+                <ClientEvents OnRequestStart="mngRequestStarted" />
+            </Telerik:RadAjaxManager>
                 <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server">
                 </telerik:RadAjaxLoadingPanel>
                 <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel2" runat="server" Transparency="70">
                 </telerik:RadAjaxLoadingPanel>
-
             </td>
         </tr>
     </table>

@@ -10,28 +10,22 @@
     </script>
     <script src="scripts.js" type="text/javascript"></script>
     <style type="text/css">
-        .auto-style2 {
-            width: 90px;
-            height: 166px;
-        }
-
-        .auto-style3 {
-            height: 166px;
-        }
+        .auto-style2 { width: 90px; height: 166px; }
+        .auto-style3 { height: 166px; }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentReports" runat="Server">
-
+    
     <table class="table" align="center">
         <tr>
-            <td style="height: 7%" colspan="2">
+            <td style="height: 7%" colspan="2">                
                 <img alt="" src="img2/img-02.png" height="80px" />
             </td>
         </tr>
         <tr>
             <td style="width: 70%; vertical-align: top" class="table_content">
                 <table align="center">
-                    <tr>
+                    <tr>                       
                         <td style="width: 50px"></td>
                         <td>
                             <div class="infoPaneBg" runat="server" id="detailsPanel" align="center">
@@ -43,33 +37,34 @@
                                     <tr>
                                         <td>
                                             <div id="pnlRecs">
-                                                <table>
-                                                    <tr>
-                                                        <td style="text-align: right">Alce:</td>
-                                                        <td style="width: 240px; text-align: right;">
-                                                            <telerik:RadComboBox ID="cbbBlades" runat="server" Width="300px" Skin="MetroTouch"
-                                                                EmptyMessage="Selecciona un Alce" HighlightTemplatedItems="True" Filter="Contains" AutoPostBack="True" DataSourceID="dstest" DataTextField="Name" DataValueField="ID" Height="250px"
-                                                                OnTextChanged="cbbEmploye_TextChanged">
-                                                            </telerik:RadComboBox>
-                                                            <asp:SqlDataSource ID="dstest" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT id, Name FROM vRecs"></asp:SqlDataSource>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: right">Para</td>
-                                                        <td style="width: 240px; text-align: right;">
-                                                            <telerik:RadComboBox ID="cbbEmploye" runat="server" Width="300px" OnTextChanged="cbbEmploye_TextChanged" Skin="MetroTouch"
-                                                                EmptyMessage="Selecciona un Empleado" HighlightTemplatedItems="True" Filter="Contains" AutoPostBack="True" DataSourceID="dsEmploye" DataTextField="Name" DataValueField="ID" Height="250px">
-                                                            </telerik:RadComboBox>
-                                                            <asp:SqlDataSource ID="dsEmploye" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SelectUsers" SelectCommandType="StoredProcedure">
-                                                                <SelectParameters>
-                                                                    <asp:SessionParameter Name="id" SessionField="UserID" Type="Int32" />
-                                                                </SelectParameters>
-                                                            </asp:SqlDataSource>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+                                            <table>
+                                                <tr>
+                                                    <td style="text-align: right">Blade:</td>
+                                                    <td style="width: 240px; text-align: right;">
+                                                        <telerik:RadComboBox ID="cbbBlades" runat="server" Width="300px" Skin="MetroTouch"
+                                                            EmptyMessage="Selecciona una Blade" HighlightTemplatedItems="True" Filter="Contains" AutoPostBack="True" DataSourceID="dstest" DataTextField="Name" DataValueField="ID" Height="250px"
+                                                            OnTextChanged="cbbEmploye_TextChanged">
+                                                        </telerik:RadComboBox>
+                                                        <asp:SqlDataSource ID="dstest" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT id, Name FROM vRecs"></asp:SqlDataSource>                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: right">Para</td>
+                                                    <td style="width: 240px; text-align: right;">
+                                                        <telerik:RadComboBox ID="cbbEmploye" runat="server" Width="300px" OnTextChanged="cbbEmploye_TextChanged" Skin="MetroTouch"
+                                                            EmptyMessage="Selecciona un Empleado" HighlightTemplatedItems="True" Filter="Contains" AutoPostBack="True" DataSourceID="dsEmploye" DataTextField="Name" DataValueField="ID" Height="250px">
+                                                        </telerik:RadComboBox>
+                                                        <asp:SqlDataSource ID="dsEmploye" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SelectUsers" SelectCommandType="StoredProcedure">
+                                                            <SelectParameters>
+                                                                <asp:SessionParameter Name="id" SessionField="UserID" Type="Int32" />
+                                                            </SelectParameters>
+                                                        </asp:SqlDataSource>
+                                                    </td>
+                                                </tr>                                                
+                                            </table>
                                             </div>
                                             <div id="pnlCong">
+
                                             </div>
                                         </td>
                                     </tr>
@@ -79,7 +74,7 @@
                                                 OnClientClicking="CustomRadWindowConfirm" OnClick="Button_Click" Font-Bold="True">
                                                 <Image ImageUrl="img2/btn_Blade01.png" />
                                             </telerik:RadButton>
-                                            <%-- <asp:ImageButton ID="ImageButton1" runat="server" Width="185px" Height="40px" ImageUrl="img2/btn_Blade02.png" 
+                                           <%-- <asp:ImageButton ID="ImageButton1" runat="server" Width="185px" Height="40px" ImageUrl="img2/btn_Blade02.png" 
                                                 OnClick="ImageButton1_Click" />--%>
                                             <telerik:RadWindow RenderMode="Lightweight" ID="confirmWindow" runat="server" VisibleTitlebar="false" VisibleStatusbar="false"
                                                 Modal="true" Behaviors="None" Height="260px" Width="420px" Style="z-index: 100001;">
@@ -115,3 +110,4 @@
         </tr>
     </table>
 </asp:Content>
+

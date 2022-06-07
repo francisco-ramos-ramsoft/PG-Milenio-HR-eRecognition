@@ -44,7 +44,7 @@ public partial class Blade : System.Web.UI.Page
         //Retorna el Folio de la Blade
         if (Session["iRec"] == null)
         {
-            string messageError = "Selecciona un alce o reconocimiento disponible";
+            string messageError = "Selecciona un blade o reconocimiento disponible";
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + messageError + "')", true);
 
             return;
@@ -52,12 +52,10 @@ public partial class Blade : System.Web.UI.Page
         int iEmpID = Convert.ToInt32(cbbEmploye.SelectedValue);
         int iRsnID = 0;
         int iUsrID = Convert.ToInt32(Session["UserID"].ToString());
-        //if (Session["iRec"].ToString() == "10" || Session["iRec"].ToString() == "11")
-        //    iRsnID = Convert.ToInt32(cbbReason.SelectedValue);
-        //else
-        //    iRsnID = 0;
-        iRsnID = Convert.ToInt32(cbbReason.SelectedValue);
-
+        if (Session["iRec"].ToString() == "10" || Session["iRec"].ToString() == "11")
+            iRsnID = Convert.ToInt32(cbbReason.SelectedValue);        
+        else
+            iRsnID = 0;
 
         Session["NewRecID"] = NewBlade(iEmpID, iRsnID, iUsrID, Convert.ToInt32(Session["iRec"].ToString()), txbReason.Text).ToString();         
         if(Session["NewRecID"].ToString()!="0")

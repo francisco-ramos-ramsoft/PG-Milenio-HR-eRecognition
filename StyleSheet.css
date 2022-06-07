@@ -90,6 +90,8 @@
             width:1280px;
             height: 32px;
             margin:auto;
+            border-top:solid #999999;
+            
             background-image: url('./img/Blades-25.png');
             background-size:cover;
         }

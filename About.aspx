@@ -1,21 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script language="JavaScript">
+   <SCRIPT LANGUAGE="JavaScript">
 
-        function url(img) {
+       function url(img) {
 
-            hidden = open(img, 'NewWindow', 'width=850, height=450,status=no,resizable=yes,scrollbars=yes');
+           hidden = open(img, 'NewWindow', 'width=850, height=450,status=no,resizable=yes,scrollbars=yes');
 
-        }
-    </script>
+       }
+            </SCRIPT>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBodyMain" runat="Server">
     <table style="width: 100%">
         <tr>
             <td>
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/titulo05.png" Height="100px" Window="90%" />
-
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/titulo05.png" />
             </td>
         </tr>
         <tr>
@@ -24,38 +23,36 @@
                     <tr>
                         <td>
                             <table>
-
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img2/btn_info01.png" Height="40px" OnClick="ImageButton1_Click" CssClass="btnInfo" />
+                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img2/btn_info01.png" Height="40px" OnClick="ImageButton1_Click" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img2/btn_info02.png" Height="40px" OnClick="ImageButton2_Click" CssClass="btnInfo"/>
+                                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img2/btn_info02.png" Height="40px" OnClick="ImageButton2_Click" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img2/btn_info03.png" Height="40px" Width="100%" OnClick="ImageButton3_Click" CssClass="btnInfo"/>
+                                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img2/btn_info03.png" Height="40px" OnClick="ImageButton3_Click" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/img2/btn_info04.png" Height="40px" Width="100%" OnClick="ImageButton4_Click" CssClass="btnInfo"/>
+                                        <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/img2/btn_info04.png" Height="40px" OnClick="ImageButton4_Click" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/img2/btn_info05.png" Height="40px" OnClick="ImageButton5_Click" CssClass="btnInfo"/>
+                                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/img2/btn_info05.png" Height="40px" OnClick="ImageButton5_Click" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/img2/btn_info09.png" Height="40px" OnClick="ImageButton9_Click" CssClass="btnInfo"/>
+                                        <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/img2/btn_info09.png" Height="40px" OnClick="ImageButton9_Click" />
                                     </td>
                                 </tr>
-
                             </table>
                         </td>
                         <td>
@@ -70,15 +67,15 @@
                                             <table align="center">
                                                 <tr>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/img2/btn_info06.png" Height="160px" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/img2/btn_info06.png" Height="160px"/>
                                                     </td>
-                                                    <td style="width: 30px"></td>
+                                                    <td style="width:30px"></td>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/img2/btn_info07.png" Height="160px" Visible="false" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/img2/btn_info07.png" Height="160px" Visible="false"/>
                                                     </td>
-                                                    <td style="width: 30px"></td>
+                                                    <td style="width:30px"></td>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/img2/btn_info08.png" Height="160px" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/img2/btn_info08.png" Height="160px" />
                                                     </td>
                                                 </tr>
                                             </table>
@@ -87,7 +84,6 @@
                                                     <asp:Image ID="image2" runat="server" ImageUrl="img2/info05_01.png" BorderWidth="0"></asp:Image>
                                                 </ContentTemplate>
                                             </telerik:RadWindow>
-
                                         </td>
                                     </tr>
                                 </table>
@@ -99,15 +95,15 @@
                                             <table align="center">
                                                 <tr>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/img2/btn_info10.png" Height="160px" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/img2/btn_info10.png" Height="160px"/>
                                                     </td>
-                                                    <td style="width: 30px"></td>
+                                                    <td style="width:30px"></td>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/img2/btn_info11.png" Height="160px" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/img2/btn_info11.png" Height="160px"/>
                                                     </td>
-                                                    <td style="width: 30px"></td>
+                                                    <td style="width:30px"></td>
                                                     <td>
-                                                        <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="~/img2/btn_info12.png" Height="160px" CssClass="btnPDF"/>
+                                                        <asp:ImageButton ID="ImageButton12" runat="server" ImageUrl="~/img2/btn_info12.png" Height="160px" />
                                                     </td>
                                                 </tr>
                                             </table>

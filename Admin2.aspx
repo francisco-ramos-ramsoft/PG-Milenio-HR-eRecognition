@@ -2,9 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
-        .RadTabStrip_MetroTouch .rtsLevel .rmText {
-            text-transform: none;
-        }
+        .RadTabStrip_MetroTouch .rtsLevel .rmText { text-transform: none; }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBodyMain" runat="Server">
@@ -591,3 +589,4 @@
     </table>
 
 </asp:Content>
+

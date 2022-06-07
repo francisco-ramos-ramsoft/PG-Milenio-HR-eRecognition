@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBodyMain" Runat="Server">
-    <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/cc01.png" Height="148px" CssClass="zoom"/>
+    <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/cc01.png"/>
     <br />
     <table align="center" class="table">
         <tr>
@@ -11,7 +11,7 @@
                 <table>
                     <tr>
                         <td colspan="2">
-                            <asp:Image ID="imagePreview" runat="server" ImageUrl="images/Recs/spacer.gif" AlternateText="preview" BorderWidth="0" Height="125" CssClass="ImgArticulo"></asp:Image>
+                            <asp:Image ID="imagePreview" runat="server" ImageUrl="images/Recs/spacer.gif" AlternateText="preview" BorderWidth="0"></asp:Image>
                         </td>
                     </tr>
                     <tr>
@@ -52,7 +52,7 @@
                    </tr>
                    <tr>
                        <td>
-                           <asp:ImageButton ID="btnRequest" runat="server" Height="40px" ImageUrl="~/img2/btn_Master03.png" OnClick="btnRequest_Click" CssClass="btn"/>
+                           <asp:ImageButton ID="btnRequest" runat="server" Height="40px" ImageUrl="~/img2/btn_Master03.png" OnClick="btnRequest_Click" />
                        </td>
                    </tr>
                </table> 
