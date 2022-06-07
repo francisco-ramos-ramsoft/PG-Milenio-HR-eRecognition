@@ -52,7 +52,7 @@ public partial class Reports : System.Web.UI.Page
         else
             pnlDates.Visible = true;
 
-        if (RadComboBox1.Text == "Asignacion de Alces")
+        if (RadComboBox1.Text == "Asignacion de Blades")
         {
             pnlBlades.Visible = true;
             pnlDates.Visible = false;
@@ -128,9 +128,6 @@ public partial class Reports : System.Web.UI.Page
             grdLogPrint.Visible = false;
             GrdBlades.Visible = false;
 
-            dsGrdExchange.SelectParameters["B"].DefaultValue = dtBegin.SelectedDate.Value.ToString("yyyy-MM-dd");
-            dsGrdExchange.SelectParameters["E"].DefaultValue = dtEnd.SelectedDate.Value.ToString("yyyy-MM-dd");
-            dsGrdExchange.DataBind();
             grdInventory.Rebind();
         }
         if (RadComboBox1.Text == "Registro de Impresiones")
@@ -145,7 +142,7 @@ public partial class Reports : System.Web.UI.Page
 
             grdLogPrint.Rebind();
         }
-        if (RadComboBox1.Text == "Asignacion de Alces")
+        if (RadComboBox1.Text == "Asignacion de Blades")
         {
             grdManagers.Visible = false;
             grdRecognitios.Visible = false;
@@ -183,7 +180,7 @@ public partial class Reports : System.Web.UI.Page
     protected void RadButton2_Click(object sender, EventArgs e)
     {
 
-        string alternateText = "Xlsx";
+        string alternateText = "ExcelML";
         
 
         if (RadComboBox1.Text == "Managers")
@@ -192,8 +189,7 @@ public partial class Reports : System.Web.UI.Page
             grdManagers.ExportSettings.IgnorePaging = true;            
             grdManagers.ExportSettings.ExportOnlyData = true;
             grdManagers.ExportSettings.OpenInNewWindow = true;
-            //grdManagers.ExportSettings.FileName = "RecMilenio_Managers_" + RadComboBox2.SelectedValue;
-            grdManagers.ExportSettings.FileName = "RecAlceBlanco_Managers_" + RadComboBox2.SelectedValue;
+            grdManagers.ExportSettings.FileName = "RecMilenio_Managers_" + RadComboBox2.SelectedValue;
             grdManagers.MasterTableView.ExportToExcel();
 
             
@@ -209,8 +205,7 @@ public partial class Reports : System.Web.UI.Page
             grdRecognitios.ExportSettings.IgnorePaging = true;
             grdRecognitios.ExportSettings.OpenInNewWindow = true;
             grdRecognitios.ExportSettings.ExportOnlyData = true;
-            //grdRecognitios.ExportSettings.FileName = "RecMilenio_Reconocimientos";
-            grdRecognitios.ExportSettings.FileName = "RecAlceBlanco_Reconocimientos";
+            grdRecognitios.ExportSettings.FileName = "RecMilenio_Reconocimientos";
             grdRecognitios.MasterTableView.ExportToExcel();
         }
         if (RadComboBox1.Text == "Inventarios")
@@ -219,8 +214,7 @@ public partial class Reports : System.Web.UI.Page
             grdInventory.ExportSettings.IgnorePaging = true;
             grdInventory.ExportSettings.OpenInNewWindow = true;
             grdInventory.ExportSettings.ExportOnlyData = true;
-            //grdInventory.ExportSettings.FileName = "RecMilenio_Inventarios";
-            grdInventory.ExportSettings.FileName = "RecAlceBlanco_Inventarios";
+            grdInventory.ExportSettings.FileName = "RecMilenio_Inventarios";
             grdInventory.MasterTableView.ExportToExcel();
         }
         if (RadComboBox1.Text == "Canje de artículos")
@@ -229,8 +223,7 @@ public partial class Reports : System.Web.UI.Page
             grdExchange.ExportSettings.IgnorePaging = true;
             grdExchange.ExportSettings.OpenInNewWindow = true;
             grdExchange.ExportSettings.ExportOnlyData = true;
-            //grdExchange.ExportSettings.FileName = "RecMilenio_Canje";
-            grdExchange.ExportSettings.FileName = "RecAlceBlanco_Canje";
+            grdExchange.ExportSettings.FileName = "RecMilenio_Canje";
             grdExchange.MasterTableView.ExportToExcel();
         }
         if (RadComboBox1.Text == "Registro de Impresiones")
@@ -239,17 +232,16 @@ public partial class Reports : System.Web.UI.Page
             grdLogPrint.ExportSettings.IgnorePaging = true;
             grdLogPrint.ExportSettings.OpenInNewWindow = true;
             grdLogPrint.ExportSettings.ExportOnlyData = true;
-            //grdLogPrint.ExportSettings.FileName = "RecMilenio_Impresiones";
-            grdLogPrint.ExportSettings.FileName = "RecAlceBlanco_Impresiones";
+            grdLogPrint.ExportSettings.FileName = "RecMilenio_Impresiones";
             grdLogPrint.MasterTableView.ExportToExcel();
         }
-        if (RadComboBox1.Text == "Asignacion de Alces")
+        if (RadComboBox1.Text == "Asignacion de Blades")
         {
             GrdBlades.ExportSettings.Excel.Format = (GridExcelExportFormat)Enum.Parse(typeof(GridExcelExportFormat), alternateText);
             GrdBlades.ExportSettings.IgnorePaging = true;
             GrdBlades.ExportSettings.OpenInNewWindow = true;
             GrdBlades.ExportSettings.ExportOnlyData = true;
-            GrdBlades.ExportSettings.FileName = "Rec_AlcesAsignadas_" + Name.Text + "_" + Month.Text; ;
+            GrdBlades.ExportSettings.FileName = "Rec_BladesAsignadas_" + Name.Text + "_" + Month.Text; ;
             GrdBlades.MasterTableView.ExportToExcel();
         }
     }

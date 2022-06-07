@@ -2,9 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
-        .RadTabStrip_MetroTouch .rtsLevel .rmText {
-            text-transform: none;
-        }
+        .RadTabStrip_MetroTouch .rtsLevel .rmText { text-transform: none; }
     </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBodyMain" runat="Server">
@@ -19,7 +17,7 @@
     </telerik:RadAjaxManager>
     <table class="table" align="center">
         <tr>
-            <td class="table_tittle" style="height:7%" colspan="2">Administración de Catálogos</td>
+            <td class="table_tittle" style="height: 7%" colspan="2">Administración de Catálogos</td>
         </tr>
         <tr>
             <td>
@@ -28,7 +26,7 @@
                     <Tabs>
                         <telerik:RadTab Text="Reconocimientos" Selected="True"></telerik:RadTab>
                         <telerik:RadTab Text="Rocas & Motivos"></telerik:RadTab>
-                        <telerik:RadTab Text="Asignación de Alces"></telerik:RadTab>
+                        <telerik:RadTab Text="Asignación de Blades"></telerik:RadTab>
                         <telerik:RadTab Text="Artículos"></telerik:RadTab>
                         <telerik:RadTab Text="Almacén"></telerik:RadTab>
                         <telerik:RadTab Text="Empleados"></telerik:RadTab>
@@ -58,15 +56,15 @@
                                     <telerik:GridEditCommandColumn ButtonType="ImageButton" ItemStyle-Width="5%" HeaderStyle-Width="8%"></telerik:GridEditCommandColumn>
                                     <telerik:GridBoundColumn DataField="ID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ID" ReadOnly="True" SortExpression="ID" UniqueName="ID" Visible="false" ItemStyle-Width="10%" HeaderStyle-Width="10%">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Name" FilterControlAltText="Filter Name column" HeaderText="Nombre" SortExpression="Name" UniqueName="Name" ItemStyle-Width="20%" HeaderStyle-Width="20%">
+                                    <telerik:GridBoundColumn DataField="Name" FilterControlAltText="Filter Name column" HeaderText="Nombre" SortExpression="Name" UniqueName="Name" ItemStyle-Width="25%" HeaderStyle-Width="25%">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Description" FilterControlAltText="Filter Description column" HeaderText="Descripción" SortExpression="Description" UniqueName="Description" ItemStyle-Width="20%" HeaderStyle-Width="20%">
+                                    <telerik:GridBoundColumn DataField="Description" FilterControlAltText="Filter Description column" HeaderText="Descripción" SortExpression="Description" UniqueName="Description" ItemStyle-Width="30%" HeaderStyle-Width="30%">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Value" DataType="System.Int32" FilterControlAltText="Filter Value column" HeaderText="Valor" SortExpression="Value" UniqueName="Value" ItemStyle-Width="5%" HeaderStyle-Width="5%">
+                                    <telerik:GridBoundColumn DataField="Value" DataType="System.Int32" FilterControlAltText="Filter Value column" HeaderText="Valor" SortExpression="Value" UniqueName="Value" ItemStyle-Width="8%" HeaderStyle-Width="8%">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridCheckBoxColumn DataType="System.Boolean" DataField="Enabled" HeaderText="Habilitado" SortExpression="Enabled" UniqueName="Enabled" ItemStyle-Width="5%" HeaderStyle-Width="5%">
+                                    <telerik:GridCheckBoxColumn DataType="System.Boolean" DataField="Enabled" HeaderText="Habilitado" SortExpression="Enabled" UniqueName="Enabled" ItemStyle-Width="8%" HeaderStyle-Width="8%">
                                     </telerik:GridCheckBoxColumn>
-                                    <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ImageWidth="80" ItemStyle-CssClass="imgAdmin" HeaderText="Imagen" ItemStyle-Width="10%" HeaderStyle-Width="10%">
+                                    <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ImageHeight="50px" ImageWidth="80px" HeaderText="Imagen" ItemStyle-Width="10%" HeaderStyle-Width="10%">
                                     </telerik:GridImageColumn>
                                 </Columns>
                                 <EditFormSettings>
@@ -80,7 +78,7 @@
                         <asp:SqlDataSource ID="dsRecognitions" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Server %>"
                             OldValuesParameterFormatString="original_{0}"
                             SelectCommand="SELECT [ID], [Name], [Description], [Value], [Enabled] FROM [Recognitions]"
-                            UpdateCommand="UPDATE [Recognitions] SET [Name] = @Name, [Description] = @Description, [Value] = @Value, [Enabled] = @Enabled WHERE [ID] = @original_ID AND [Name] = @original_Name AND [Description] = @original_Description AND [Value] = @original_Value AND [Enabled] = @original_Enabled"
+                            UpdateCommand="UPDATE [Recognitions] SET [Name] = @Name, [Description] = @Description, [Value] = @Value, [Enabled] = @Enabled WHERE [ID] = @original_ID AND [Name] = @original_Name AND [Description] = @original_Description AND [Value] = @original_Value AND [Enabled] = @original_Enabled" 
                             DeleteCommand="DELETE FROM [Recognitions] WHERE [ID] = @original_ID AND [Name] = @original_Name AND [Description] = @original_Description AND [Value] = @original_Value AND [Enabled] = @original_Enabled"
                             InsertCommand="INSERT INTO [Recognitions] ([Name], [Description], [Value], [Enabled]) VALUES (@Name, @Description, @Value, @Enabled)">
                             <DeleteParameters>
@@ -141,9 +139,9 @@
                                         <FilterMenu EnableImageSprites="False">
                                         </FilterMenu>
                                     </telerik:RadGrid>
-                                    <asp:SqlDataSource ID="ds_Rocks" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name], [Descrip] FROM [Rocks]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Rocks] WHERE [ID] = @original_ID AND [Name] = @original_Name AND [Descrip] = @original_Descrip"
-                                        InsertCommand="INSERT INTO [Rocks] ([Name], [Descrip]) VALUES (@Name, @Descrip)"
-                                        OldValuesParameterFormatString="original_{0}"
+                                    <asp:SqlDataSource ID="ds_Rocks" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name], [Descrip] FROM [Rocks]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Rocks] WHERE [ID] = @original_ID AND [Name] = @original_Name AND [Descrip] = @original_Descrip" 
+                                        InsertCommand="INSERT INTO [Rocks] ([Name], [Descrip]) VALUES (@Name, @Descrip)" 
+                                        OldValuesParameterFormatString="original_{0}" 
                                         UpdateCommand="UPDATE [Rocks] SET [Name] = @Name WHERE [ID] = @original_ID">
                                         <DeleteParameters>
                                             <asp:Parameter Name="original_ID" Type="Int32" />
@@ -163,7 +161,7 @@
                                         </UpdateParameters>
                                     </asp:SqlDataSource>
                                 </td>
-                                <td style="width: 70px"></td>
+                                <td style="width:70px"></td>
                                 <td>
                                     <telerik:RadGrid ID="grdReasons" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" AllowAutomaticDeletes="True" CellSpacing="0" DataSourceID="ds_Reasons" GridLines="None" Width="700px" Height="400px">
                                         <ClientSettings>
@@ -185,14 +183,14 @@
                                                     UniqueName="RockID" SortExpression="RockID" HeaderText="Roca" DataSourceID="ds_Rocks"
                                                     AllowAutomaticLoadOnDemand="true"
                                                     AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="10" DropDownControlType="DropDownList">
-                                                </telerik:GridDropDownColumn>
+                                                </telerik:GridDropDownColumn>                                         
                                                 <telerik:GridBoundColumn DataField="Category" FilterControlAltText="Filter Category column" HeaderText="Categoria" SortExpression="Category" UniqueName="Category" ItemStyle-Width="20%" HeaderStyle-Width="20%">
                                                 </telerik:GridBoundColumn>
                                                 <telerik:GridBoundColumn DataField="Descrip" FilterControlAltText="Filter Descrip column" HeaderText="Motivo" SortExpression="Descrip" UniqueName="Descrip" ItemStyle-Width="40%" HeaderStyle-Width="40%">
                                                 </telerik:GridBoundColumn>
                                                 <telerik:GridClientDeleteColumn ButtonType="ImageButton" ItemStyle-Width="8%" HeaderStyle-Width="8%"></telerik:GridClientDeleteColumn>
                                             </Columns>
-                                            <%-- <GroupByExpressions>
+                                           <%-- <GroupByExpressions>
                                                 <telerik:GridGroupByExpression>
                                                     <SelectFields>
                                                         <telerik:GridGroupByField FieldAlias="RockID" FieldName="RockID" FormatString="" HeaderText="" />
@@ -202,8 +200,7 @@
                                                     </GroupByFields>
                                                 </telerik:GridGroupByExpression>
                                             </GroupByExpressions>
-                                            --%>
-                                            <EditFormSettings>
+                                           --%> <EditFormSettings>
                                                 <EditColumn FilterControlAltText="Filter EditCommandColumn column">
                                                 </EditColumn>
                                             </EditFormSettings>
@@ -211,12 +208,12 @@
                                         <FilterMenu EnableImageSprites="False">
                                         </FilterMenu>
                                     </telerik:RadGrid>
-                                    <asp:SqlDataSource ID="ds_Reasons" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>"
-                                        SelectCommand="SELECT [ID], [RockID], [Category], [Descrip] FROM [Reasons]"
-                                        ConflictDetection="CompareAllValues"
-                                        DeleteCommand="DELETE FROM [Reasons] WHERE [ID] = @original_ID "
-                                        InsertCommand="INSERT INTO [Reasons] ([RockID], [Category], [Descrip]) VALUES (@RockID, @Category, @Descrip)"
-                                        OldValuesParameterFormatString="original_{0}"
+                                    <asp:SqlDataSource ID="ds_Reasons" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" 
+                                        SelectCommand="SELECT [ID], [RockID], [Category], [Descrip] FROM [Reasons]" 
+                                        ConflictDetection="CompareAllValues" 
+                                        DeleteCommand="DELETE FROM [Reasons] WHERE [ID] = @original_ID " 
+                                        InsertCommand="INSERT INTO [Reasons] ([RockID], [Category], [Descrip]) VALUES (@RockID, @Category, @Descrip)" 
+                                        OldValuesParameterFormatString="original_{0}" 
                                         UpdateCommand="UPDATE [Reasons] SET [RockID] = @RockID, [Category] = @Category, [Descrip] = @Descrip WHERE [ID] = @original_ID AND [RockID] = @original_RockID ">
                                         <DeleteParameters>
                                             <asp:Parameter Name="original_ID" Type="Int32" />
@@ -244,104 +241,99 @@
                         </table>
                     </telerik:RadPageView>
                     <telerik:RadPageView runat="server" ID="PageView3">
-                        <div>
-                            <telerik:RadGrid ID="RadGrid4" runat="server" DataSourceID="dsQty" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" CellSpacing="0" GridLines="None" AllowFilteringByColumn="True" AllowPaging="True" AllowSorting="True" Width="900px" Height="450px">
-                                <MasterTableView AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="dsQty" CommandItemDisplay="Top" EditMode="InPlace">
-                                    <CommandItemSettings ExportToPdfText="Export to PDF" />
-                                    <RowIndicatorColumn FilterControlAltText="Filter RowIndicator column" Visible="True">
-                                        <HeaderStyle Width="20px" />
-                                    </RowIndicatorColumn>
-                                    <ExpandCollapseColumn FilterControlAltText="Filter ExpandColumn column" Visible="True">
-                                        <HeaderStyle Width="20px" />
-                                    </ExpandCollapseColumn>
-                                    <Columns>
-                                        <telerik:GridBoundColumn DataField="ID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ID" ReadOnly="True" SortExpression="ID" UniqueName="ID">
-                                        </telerik:GridBoundColumn>
-                                        <telerik:GridDropDownColumn ListTextField="Name" ListValueField="ID" DataField="UserID"
-                                            UniqueName="UserID" SortExpression="UserID" HeaderText="Usuario" DataSourceID="dsLUsers"
-                                            AllowAutomaticLoadOnDemand="true"
-                                            AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="7" DropDownControlType="DropDownList">
-                                        </telerik:GridDropDownColumn>
-                                        <telerik:GridDropDownColumn ListTextField="Name" ListValueField="Month" DataField="Month"
-                                            UniqueName="Month" SortExpression="Month" HeaderText="Mes" DataSourceID="dsMonths"
-                                            AllowAutomaticLoadOnDemand="true"
-                                            AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="7" DropDownControlType="DropDownList">
-                                        </telerik:GridDropDownColumn>
-                                        <telerik:GridDropDownColumn ListTextField="Name" ListValueField="ID" DataField="RecID"
-                                            UniqueName="RecID" SortExpression="RecID" HeaderText="Reconocimiento" DataSourceID="dsRecs"
-                                            AllowAutomaticLoadOnDemand="true"
-                                            AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="7" DropDownControlType="DropDownList">
-                                        </telerik:GridDropDownColumn>
-                                        <telerik:GridBoundColumn DataField="Qty" DataType="System.Int32" FilterControlAltText="Filter Qty column" HeaderText="Cantidad" SortExpression="Qty" UniqueName="Qty">
-                                        </telerik:GridBoundColumn>
-                                        <telerik:GridEditCommandColumn ButtonType="ImageButton"></telerik:GridEditCommandColumn>
-                                    </Columns>
-                                    <EditFormSettings>
-                                        <EditColumn FilterControlAltText="Filter EditCommandColumn column">
-                                        </EditColumn>
-                                    </EditFormSettings>
-                                </MasterTableView>
-                                <FilterMenu EnableImageSprites="False">
-                                </FilterMenu>
-                            </telerik:RadGrid>
-                            <asp:SqlDataSource ID="dsQty" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Server %>"
-                                DeleteCommand="DELETE FROM [UserRecQty] WHERE [ID] = @original_ID AND [UserID] = @original_UserID AND [Month] = @original_Month AND [RecID] = @original_RecID AND [Qty] = @original_Qty"
-                                InsertCommand="INSERT INTO [UserRecQty] ([UserID], [Month], [RecID], [Qty]) VALUES (@UserID, @Month, @RecID, @Qty)" OldValuesParameterFormatString="original_{0}"
-                                SelectCommand="SELECT * FROM [UserRecQty] order by id desc"
-                                UpdateCommand="UPDATE [UserRecQty] SET [UserID] = @UserID, [Month] = @Month, [RecID] = @RecID, [Qty] = @Qty WHERE [ID] = @original_ID AND [UserID] = @original_UserID AND [Month] = @original_Month AND [RecID] = @original_RecID AND [Qty] = @original_Qty">
-                                <DeleteParameters>
-                                    <asp:Parameter Name="original_ID" Type="Int32" />
-                                    <asp:Parameter Name="original_UserID" Type="Int32" />
-                                    <asp:Parameter Name="original_Month" Type="String" />
-                                    <asp:Parameter Name="original_RecID" Type="Int32" />
-                                    <asp:Parameter Name="original_Qty" Type="Int32" />
-                                </DeleteParameters>
-                                <InsertParameters>
-                                    <asp:Parameter Name="UserID" Type="Int32" />
-                                    <asp:Parameter Name="Month" Type="String" />
-                                    <asp:Parameter Name="RecID" Type="Int32" />
-                                    <asp:Parameter Name="Qty" Type="Int32" />
-                                </InsertParameters>
-                                <UpdateParameters>
-                                    <asp:Parameter Name="UserID" Type="Int32" />
-                                    <asp:Parameter Name="Month" Type="String" />
-                                    <asp:Parameter Name="RecID" Type="Int32" />
-                                    <asp:Parameter Name="Qty" Type="Int32" />
-                                    <asp:Parameter Name="original_ID" Type="Int32" />
-                                    <asp:Parameter Name="original_UserID" Type="Int32" />
-                                    <asp:Parameter Name="original_Month" Type="String" />
-                                    <asp:Parameter Name="original_RecID" Type="Int32" />
-                                    <asp:Parameter Name="original_Qty" Type="Int32" />
-                                </UpdateParameters>
-                            </asp:SqlDataSource>
-                            <asp:SqlDataSource ID="dsRecs" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name] FROM [Recognitions] WHERE ([Enabled] = @Enabled)">
-                                <SelectParameters>
-                                    <asp:Parameter DefaultValue="True" Name="Enabled" Type="Boolean" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
-                            <asp:SqlDataSource ID="dsLUsers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name] FROM [Users] WHERE ([Active] = 1) and Name<>'System' Order by Name"></asp:SqlDataSource>
-                            <asp:SqlDataSource ID="dsMonths" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [Month], [Name] FROM [Months] where [month]>=replace(substring(convert(nvarchar(10),getdate(),120),1,7),'-','')"></asp:SqlDataSource>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <asp:Button runat="server" ID="Plantilla" Text="Plantilla" OnClientClick="window.open('https://mbrap-webserver.la.pg.com/erecognition/Templates/Plantilla_Alces.xlsx');" />
-                                    </td>
-                                    <td>
-                                        <telerik:RadAsyncUpload RenderMode="Lightweight" runat="server" ID="AsyncUpload1" MultipleFileSelection="Disabled" TargetFolder="~/TempFiles" OnFileUploaded="RadAsyncUpload1_FileUploaded" />
-                                    </td>
-                                    <td>
-                                        <telerik:RadButton runat="server" ID="Upload" Text="Cargar Archivo" />
-                                        <asp:Label runat="server" ID="UploadDetails"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div style="width: 100%">
-                        </div>
+                        <telerik:RadGrid ID="RadGrid4" runat="server" DataSourceID="dsQty" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" CellSpacing="0" GridLines="None" AllowFilteringByColumn="True" AllowPaging="True" AllowSorting="True" Width="900px" Height="450px">
+                            <MasterTableView AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="dsQty" CommandItemDisplay="Top" EditMode="InPlace">
+                                <CommandItemSettings ExportToPdfText="Export to PDF" />
+                                <RowIndicatorColumn FilterControlAltText="Filter RowIndicator column" Visible="True">
+                                    <HeaderStyle Width="20px" />
+                                </RowIndicatorColumn>
+                                <ExpandCollapseColumn FilterControlAltText="Filter ExpandColumn column" Visible="True">
+                                    <HeaderStyle Width="20px" />
+                                </ExpandCollapseColumn>
+                                <Columns>
+                                    <telerik:GridBoundColumn DataField="ID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ID" ReadOnly="True" SortExpression="ID" UniqueName="ID">
+                                    </telerik:GridBoundColumn>
+                                    <telerik:GridDropDownColumn ListTextField="Name" ListValueField="ID" DataField="UserID"
+                                        UniqueName="UserID" SortExpression="UserID" HeaderText="Usuario" DataSourceID="dsLUsers"
+                                        AllowAutomaticLoadOnDemand="true"
+                                        AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="10" DropDownControlType="DropDownList">
+                                    </telerik:GridDropDownColumn>
+                                    <telerik:GridDropDownColumn ListTextField="Name" ListValueField="Month" DataField="Month"
+                                        UniqueName="Month" SortExpression="Month" HeaderText="Mes" DataSourceID="dsMonths"
+                                        AllowAutomaticLoadOnDemand="true"
+                                        AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="10" DropDownControlType="DropDownList">
+                                    </telerik:GridDropDownColumn>
+                                    <telerik:GridDropDownColumn ListTextField="Name" ListValueField="ID" DataField="RecID"
+                                        UniqueName="RecID" SortExpression="RecID" HeaderText="Reconocimiento" DataSourceID="dsRecs"
+                                        AllowAutomaticLoadOnDemand="true"
+                                        AllowVirtualScrolling="true" ShowMoreResultsBox="true" ItemsPerRequest="10" DropDownControlType="DropDownList">
+                                    </telerik:GridDropDownColumn>
+                                    <telerik:GridBoundColumn DataField="Qty" DataType="System.Int32" FilterControlAltText="Filter Qty column" HeaderText="Cantidad" SortExpression="Qty" UniqueName="Qty">
+                                    </telerik:GridBoundColumn>
+                                    <telerik:GridEditCommandColumn ButtonType="ImageButton"></telerik:GridEditCommandColumn>
+                                </Columns>
+                                <EditFormSettings>
+                                    <EditColumn FilterControlAltText="Filter EditCommandColumn column">
+                                    </EditColumn>
+                                </EditFormSettings>
+                            </MasterTableView>
+                            <FilterMenu EnableImageSprites="False">
+                            </FilterMenu>
+                        </telerik:RadGrid>
+                        <asp:SqlDataSource ID="dsQty" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Server %>" DeleteCommand="DELETE FROM [UserRecQty] WHERE [ID] = @original_ID AND [UserID] = @original_UserID AND [Month] = @original_Month AND [RecID] = @original_RecID AND [Qty] = @original_Qty"
+                            InsertCommand="INSERT INTO [UserRecQty] ([UserID], [Month], [RecID], [Qty]) VALUES (@UserID, @Month, @RecID, @Qty)" OldValuesParameterFormatString="original_{0}"
+                            SelectCommand="SELECT * FROM [UserRecQty]"
+                            UpdateCommand="UPDATE [UserRecQty] SET [UserID] = @UserID, [Month] = @Month, [RecID] = @RecID, [Qty] = @Qty WHERE [ID] = @original_ID AND [UserID] = @original_UserID AND [Month] = @original_Month AND [RecID] = @original_RecID AND [Qty] = @original_Qty">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_ID" Type="Int32" />
+                                <asp:Parameter Name="original_UserID" Type="Int32" />
+                                <asp:Parameter Name="original_Month" Type="String" />
+                                <asp:Parameter Name="original_RecID" Type="Int32" />
+                                <asp:Parameter Name="original_Qty" Type="Int32" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="UserID" Type="Int32" />
+                                <asp:Parameter Name="Month" Type="String" />
+                                <asp:Parameter Name="RecID" Type="Int32" />
+                                <asp:Parameter Name="Qty" Type="Int32" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="UserID" Type="Int32" />
+                                <asp:Parameter Name="Month" Type="String" />
+                                <asp:Parameter Name="RecID" Type="Int32" />
+                                <asp:Parameter Name="Qty" Type="Int32" />
+                                <asp:Parameter Name="original_ID" Type="Int32" />
+                                <asp:Parameter Name="original_UserID" Type="Int32" />
+                                <asp:Parameter Name="original_Month" Type="String" />
+                                <asp:Parameter Name="original_RecID" Type="Int32" />
+                                <asp:Parameter Name="original_Qty" Type="Int32" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
+                        <asp:SqlDataSource ID="dsRecs" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name] FROM [Recognitions] WHERE ([Enabled] = @Enabled)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="True" Name="Enabled" Type="Boolean" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                        <asp:SqlDataSource ID="dsLUsers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name] FROM [Users] WHERE ([Active] = 1) and Name<>'System' Order by Name"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="dsMonths" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [Month], [Name] FROM [Months] where [month]>=replace(substring(convert(nvarchar(10),getdate(),120),1,7),'-','')"></asp:SqlDataSource>
+                       <table>
+                        <tr >
+                            <td>
+                                <asp:Button runat="server" ID="Plantilla" Text="Plantilla" OnClientClick="window.open('http://mil-web002.na.pg.com/rh_rec/Templates/Plantilla_Blades.xlsx');" />
+                            </td>
+                            <td>
+                                <telerik:RadAsyncUpload RenderMode="Lightweight" runat="server" ID="AsyncUpload1" MultipleFileSelection="Disabled" TargetFolder="~/TempFiles" OnFileUploaded="RadAsyncUpload1_FileUploaded"  />
+                            </td>
+                            <td >
+                                <telerik:RadButton runat="server" ID="Upload" Text="Cargar Archivo"/>
+                                <asp:label runat="server" id="UploadDetails"></asp:label>
+                            </td>
+                        </tr>
+                        </table>
                     </telerik:RadPageView>
                     <telerik:RadPageView runat="server" ID="RadPageView1">
 
-                        <telerik:RadGrid ID="RadGrid3" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" CellSpacing="0" DataSourceID="dsGifts" GridLines="None" Height="450px" Width="980px">
+                        <telerik:RadGrid ID="RadGrid3" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" CellSpacing="0" DataSourceID="dsGifts" GridLines="None" Height="450px" Width="900px">
                             <ClientSettings>
                                 <Scrolling AllowScroll="True" UseStaticHeaders="True" />
                             </ClientSettings>
@@ -353,21 +345,21 @@
                                 <ExpandCollapseColumn FilterControlAltText="Filter ExpandColumn column" Visible="True">
                                     <HeaderStyle Width="20px" />
                                 </ExpandCollapseColumn>
-                                <Columns>
-                                    <telerik:GridEditCommandColumn ButtonType="ImageButton" ItemStyle-Width="2%" HeaderStyle-Width="2%"></telerik:GridEditCommandColumn>
+                                <Columns>                                    
+                                    <telerik:GridEditCommandColumn ButtonType="ImageButton"></telerik:GridEditCommandColumn>
                                     <telerik:GridBoundColumn DataField="ID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ID" ReadOnly="True" SortExpression="ID" UniqueName="ID" Visible="false">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Name" FilterControlAltText="Filter Name column" HeaderText="Nombre" SortExpression="Name" UniqueName="Name" ItemStyle-Width="10%" HeaderStyle-Width="10%">
+                                    <telerik:GridBoundColumn DataField="Name" FilterControlAltText="Filter Name column" HeaderText="Nombre" SortExpression="Name" UniqueName="Name">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Descrip" FilterControlAltText="Filter Descrip column" HeaderText="Descripción" SortExpression="Descrip" UniqueName="Descrip" ItemStyle-Width="10%" HeaderStyle-Width="10%">
+                                    <telerik:GridBoundColumn DataField="Descrip" FilterControlAltText="Filter Descrip column" HeaderText="Descripción" SortExpression="Descrip" UniqueName="Descrip">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Value" DataType="System.Int32" FilterControlAltText="Filter Value column" HeaderText="Costo" SortExpression="Value" UniqueName="Value" ItemStyle-Width="5%" HeaderStyle-Width="5%">
+                                    <telerik:GridBoundColumn DataField="Value" DataType="System.Int32" FilterControlAltText="Filter Value column" HeaderText="Costo" SortExpression="Value" UniqueName="Value">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Type" FilterControlAltText="Filter Type column" HeaderText="Surte" SortExpression="Type" UniqueName="Type" ItemStyle-Width="5%" HeaderStyle-Width="5%">
-                                    </telerik:GridBoundColumn>
-                                    <telerik:GridCheckBoxColumn DataField="Active" DataType="System.Boolean" FilterControlAltText="Filter Active column" HeaderText="Activo" SortExpression="Active" UniqueName="Active" ItemStyle-Width="5%" HeaderStyle-Width="5%">
+                                    <telerik:GridBoundColumn DataField="Type" FilterControlAltText="Filter Type column" HeaderText="Surte" SortExpression="Type" UniqueName="Type">
+                                    </telerik:GridBoundColumn>         
+                                    <telerik:GridCheckBoxColumn DataField="Active" DataType="System.Boolean" FilterControlAltText="Filter Active column" HeaderText="Activo" SortExpression="Active" UniqueName="Active">
                                     </telerik:GridCheckBoxColumn>
-                                    <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Gifts/{0}.png" ImageAlign="Middle" ImageWidth="100px" ItemStyle-CssClass="imgAdmin" HeaderText="Imagen" ItemStyle-Width="7%" HeaderStyle-Width="7%">
+                                    <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Gifts/{0}.png" ImageAlign="Middle" ImageHeight="50px" ImageWidth="80px" HeaderText="Imagen" ItemStyle-Width="10%" HeaderStyle-Width="10%">
                                     </telerik:GridImageColumn>
                                 </Columns>
                                 <EditFormSettings>
@@ -408,7 +400,7 @@
                                 <asp:Parameter Name="original_Active" Type="Boolean" />
                             </UpdateParameters>
                         </asp:SqlDataSource>
-
+                        
 
                     </telerik:RadPageView>
                     <telerik:RadPageView runat="server" ID="RadPageView2">
@@ -450,7 +442,7 @@
                                         <FilterMenu EnableImageSprites="False">
                                         </FilterMenu>
                                     </telerik:RadGrid>
-                                    <asp:SqlDataSource ID="dsExistencias" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT * FROM VW_EXISTENCIAS"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="dsExistencias" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT G.ID, G.Name, SUM(I.Qty) AS Entry, COUNT(E.GiftID) AS Out, SUM(I.Qty) - COUNT(E.GiftID) AS Total FROM Gifts AS G LEFT OUTER JOIN GiftInventory AS I ON G.ID = I.GiftID LEFT OUTER JOIN GiftExchange AS E ON G.ID = E.GiftID GROUP BY G.ID, G.Name"></asp:SqlDataSource>
                                 </td>
                                 <td>
                                     <telerik:RadGrid ID="RadGrid2" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" CellSpacing="0" DataSourceID="dsGiftInventory" GridLines="None" AllowSorting="True" Width="650px" Height="470px" OnItemInserted="RadGrid2_ItemInserted">
@@ -496,7 +488,7 @@
                                         InsertCommand="INSERT INTO [GiftInventory] ([GiftID], [Qty], [Comments], [TimeStamp], [UserStamp]) VALUES (@GiftID, @Qty, @Comments, Getdate(), @UserStamp)"
                                         OldValuesParameterFormatString="original_{0}"
                                         SelectCommand="SELECT * FROM [GiftInventory]"
-                                        UpdateCommand="UPDATE [GiftInventory] SET [Qty] = @Qty, [Comments] = @Comments, [TimeStamp] = Getdate(), [UserStamp] = @UserStamp WHERE [ID] = @original_ID ">
+                                        UpdateCommand="UPDATE [GiftInventory] SET [Qty] = @Qty, [Comments] = @Comments, [TimeStamp] = Getdate(), [UserStamp] = @UserStamp WHERE [ID] = @original_ID AND [GiftID] = @original_GiftID AND [Qty] = @original_Qty AND (([Comments] = @original_Comments) OR ([Comments] IS NULL AND @original_Comments IS NULL)) AND [TimeStamp] = @original_TimeStamp AND [UserStamp] = @original_UserStamp">
                                         <DeleteParameters>
                                             <asp:Parameter Name="original_ID" Type="Int32" />
                                             <asp:Parameter Name="original_GiftID" Type="Int32" />
@@ -533,7 +525,7 @@
 
                     </telerik:RadPageView>
                     <telerik:RadPageView runat="server" ID="RadPageView3">
-                        <telerik:RadGrid ID="RadGrid1" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" AllowFilteringByColumn="True" AllowSorting="True" CellSpacing="0" DataSourceID="dsUsers" GridLines="None" Width="980px" Height="480px">
+                        <telerik:RadGrid ID="RadGrid1" runat="server" AllowAutomaticInserts="True" AllowAutomaticUpdates="True" AllowFilteringByColumn="True" AllowSorting="True" CellSpacing="0" DataSourceID="dsUsers" GridLines="None" Width="1050px" Height="480px">
                             <ClientSettings>
                                 <Scrolling AllowScroll="True" UseStaticHeaders="True" />
                             </ClientSettings>
@@ -559,7 +551,7 @@
                                     </telerik:GridBoundColumn>
                                     <telerik:GridBoundColumn DataField="Rol" FilterControlAltText="Filter Rol column" HeaderText="Rol" SortExpression="Rol" UniqueName="Rol">
                                     </telerik:GridBoundColumn>
-                                    <telerik:GridBoundColumn DataField="Leader" FilterControlAltText="Filter Leader column" HeaderText="Leader" SortExpression="Leader" UniqueName="Leader">
+                                    <telerik:GridBoundColumn DataField="mailLeader" FilterControlAltText="Filter mailLeader column" HeaderText="mailLeader" SortExpression="mailLeader" UniqueName="mailLeader">
                                     </telerik:GridBoundColumn>
                                     <telerik:GridCheckBoxColumn DataField="Active" DataType="System.Boolean" FilterControlAltText="Filter Active column" HeaderText="Active" SortExpression="Active" UniqueName="Active">
                                     </telerik:GridCheckBoxColumn>
@@ -575,11 +567,7 @@
                             <FilterMenu EnableImageSprites="False">
                             </FilterMenu>
                         </telerik:RadGrid>
-                        <asp:SqlDataSource ID="dsUsers" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Server %>" DeleteCommand="DELETE FROM [Users] WHERE [NumEmp] = @original_NumEmp AND [Name] = @original_Name AND [Mail] = @original_Mail AND (([CC] = @original_CC) OR ([CC] IS NULL AND @original_CC IS NULL)) AND (([Rol] = @original_Rol) OR ([Rol] IS NULL AND @original_Rol IS NULL)) AND (([mailLeader] = @original_mailLeader) OR ([mailLeader] IS NULL AND @original_mailLeader IS NULL)) AND [Active] = @original_Active AND [isAdmin] = @original_isAdmin"
-                            InsertCommand="INSERT INTO [Users] ([NumEmp], [Name], [Mail], [CC], [Rol], [Leader], [Active], [isAdmin]) VALUES (@NumEmp, @Name, @Mail, @CC, @Rol, @Leader, 1, @isAdmin)"
-                            OldValuesParameterFormatString="original_{0}"
-                            SelectCommand="SELECT * FROM [Users] WHERE ([Rol] &lt;&gt; @Rol) ORDER BY [Name]"
-                            UpdateCommand="UPDATE [Users] SET [Name] = @Name, [Mail] = @Mail, [CC] = @CC, [Rol] = @Rol, [Leader] = @Leader, [Active] = @Active, [isAdmin] = @isAdmin WHERE [NumEmp] = @original_NumEmp ">
+                        <asp:SqlDataSource ID="dsUsers" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:Server %>" DeleteCommand="DELETE FROM [Users] WHERE [NumEmp] = @original_NumEmp AND [Name] = @original_Name AND [Mail] = @original_Mail AND (([CC] = @original_CC) OR ([CC] IS NULL AND @original_CC IS NULL)) AND (([Rol] = @original_Rol) OR ([Rol] IS NULL AND @original_Rol IS NULL)) AND (([mailLeader] = @original_mailLeader) OR ([mailLeader] IS NULL AND @original_mailLeader IS NULL)) AND [Active] = @original_Active AND [isAdmin] = @original_isAdmin" InsertCommand="INSERT INTO [Users] ([NumEmp], [Name], [Mail], [CC], [Rol], [mailLeader], [Active], [isAdmin]) VALUES (@NumEmp, @Name, @Mail, @CC, @Rol, @mailLeader, @Active, @isAdmin)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Users] WHERE ([Rol] &lt;&gt; @Rol) ORDER BY [NumEmp]" UpdateCommand="UPDATE [Users] SET [Name] = @Name, [Mail] = @Mail, [CC] = @CC, [Rol] = @Rol, [mailLeader] = @mailLeader, [Active] = @Active, [isAdmin] = @isAdmin WHERE [NumEmp] = @original_NumEmp AND [Name] = @original_Name AND [Mail] = @original_Mail AND (([CC] = @original_CC) OR ([CC] IS NULL AND @original_CC IS NULL)) AND (([Rol] = @original_Rol) OR ([Rol] IS NULL AND @original_Rol IS NULL)) AND (([mailLeader] = @original_mailLeader) OR ([mailLeader] IS NULL AND @original_mailLeader IS NULL)) AND [Active] = @original_Active AND [isAdmin] = @original_isAdmin">
                             <DeleteParameters>
                                 <asp:Parameter Name="original_NumEmp" Type="Int32" />
                                 <asp:Parameter Name="original_Name" Type="String" />
@@ -596,7 +584,8 @@
                                 <asp:Parameter Name="Mail" Type="String" />
                                 <asp:Parameter Name="CC" Type="String" />
                                 <asp:Parameter Name="Rol" Type="String" />
-                                <asp:Parameter Name="Leader" Type="String" />
+                                <asp:Parameter Name="mailLeader" Type="String" />
+                                <asp:Parameter Name="Active" Type="Boolean" />
                                 <asp:Parameter Name="isAdmin" Type="Boolean" />
                             </InsertParameters>
                             <SelectParameters>
@@ -607,7 +596,7 @@
                                 <asp:Parameter Name="Mail" Type="String" />
                                 <asp:Parameter Name="CC" Type="String" />
                                 <asp:Parameter Name="Rol" Type="String" />
-                                <asp:Parameter Name="Leader" Type="String" />
+                                <asp:Parameter Name="mailLeader" Type="String" />
                                 <asp:Parameter Name="Active" Type="Boolean" />
                                 <asp:Parameter Name="isAdmin" Type="Boolean" />
                                 <asp:Parameter Name="original_NumEmp" Type="Int32" />
@@ -627,77 +616,78 @@
                             <tr>
                                 <td>
                                     <div>
-                                        <telerik:RadGrid ID="RadGrid5" runat="server" Width="980px"
-                                            AllowAutomaticInserts="True" GridLines="None" AllowAutomaticDeletes="True" DataSourceID="SqlDataSource1" MasterTableView-DataKeyNames="ImageId"
-                                            OnInsertCommand="RadGrid1_InsertCommand" CellSpacing="0" OnUpdateCommand="RadGrid1_UpdateCommand" Height="480px">
-                                            <ClientSettings>
-                                                <Scrolling AllowScroll="True" UseStaticHeaders="True" />
-                                            </ClientSettings>
-                                            <MasterTableView AutoGenerateColumns="False" DataKeyNames="ImageID" DataSourceID="SqlDataSource1"
-                                                CommandItemDisplay="Top" EditMode="InPlace" CommandItemSettings-AddNewRecordText="Agregar Foto!">
-                                                <CommandItemSettings AddNewRecordText="Agregar Foto!" ExportToPdfText="Export to PDF"></CommandItemSettings>
-                                                <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column"></RowIndicatorColumn>
-                                                <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column"></ExpandCollapseColumn>
-                                                <Columns>
-                                                    <telerik:GridEditCommandColumn ButtonType="ImageButton" ItemStyle-Width="2%" HeaderStyle-Width="2%"></telerik:GridEditCommandColumn>
-                                                    <%--<telerik:GridClientDeleteColumn ButtonType="ImageButton"></telerik:GridClientDeleteColumn>--%>
-                                                    <telerik:GridButtonColumn CommandName="Delete" UniqueName="DeleteColumn" ButtonType="ImageButton" ConfirmTextFields="ImgeID" ConfirmTextFormatString="Está seguro que deseas eliminar la imagen:<b>'{0}'</b>" ConfirmTitle="Atención" ConfirmDialogType="RadWindow" ItemStyle-Width="2%" HeaderStyle-Width="2%"></telerik:GridButtonColumn>
-                                                    <telerik:GridTemplateColumn HeaderText="Nombre del archivo" UniqueName="ImageName" DataField="ImageName" ItemStyle-Width="5%" HeaderStyle-Width="5%">
-                                                        <ItemTemplate>
-                                                            <asp:Label runat="server" ID="LblImage" Text='<%# Eval("ImageName") %>'></asp:Label>
-                                                        </ItemTemplate>
-                                                        <EditItemTemplate>
-                                                            <telerik:RadAsyncUpload ID="RadUpload1" runat="server"
-                                                                TargetFolder="Images/Photos" AllowedFileExtensions="jpg,jpeg,png"
-                                                                OverwriteExistingFiles="false"
-                                                                ControlObjectsVisibility="None">
-                                                            </telerik:RadAsyncUpload>
-                                                        </EditItemTemplate>
-                                                    </telerik:GridTemplateColumn>
-                                                    <telerik:GridBoundColumn DataField="ImageID" DataType="System.Int32" FilterControlAltText="Filter ID column" HeaderText="ImageId" ReadOnly="True" SortExpression="ImageId" UniqueName="ImageID" Visible="true" ItemStyle-Width="5%" HeaderStyle-Width="5%">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridBoundColumn DataField="status" DataType="System.String" FilterControlAltText="Filter ID column" HeaderText="Estatus" ReadOnly="False" SortExpression="status" UniqueName="status" ItemStyle-Width="5%" HeaderStyle-Width="5%">
-                                                    </telerik:GridBoundColumn>
-                                                    <telerik:GridImageColumn DataImageUrlFields="ImageName" UniqueName="Photo" DataType="System.String" DataImageUrlFormatString="~/Images/Photos/{0}" ImageAlign="Middle" ItemStyle-CssClass="imgAdmin" ImageWidth="120px" HeaderText="Foto" ItemStyle-Width="5%" HeaderStyle-Width="5%">
-                                                    </telerik:GridImageColumn>
-                                                </Columns>
-                                                <EditFormSettings>
-                                                    <PopUpSettings Modal="true" Height="500px" Width="400px" />
-                                                    <EditColumn UniqueName="EditCommandColumn1">
-                                                    </EditColumn>
-                                                </EditFormSettings>
-                                            </MasterTableView>
-                                            <FilterMenu EnableImageSprites="False"></FilterMenu>
-                                        </telerik:RadGrid>
+                                        <telerik:RadGrid ID="RadGrid5" runat="server" Width="900px" 
+                                        AllowAutomaticInserts="True" GridLines="None"  AllowAutomaticDeletes="True" DataSourceID="SqlDataSource1" MasterTableView-DataKeyNames="ImageId"
+                                        OnInsertCommand="RadGrid1_InsertCommand" CellSpacing="0" OnUpdateCommand="RadGrid1_UpdateCommand" Height="480px">
+                                        <ClientSettings>
+                                            <Scrolling AllowScroll="True" UseStaticHeaders="True" />
+                                        </ClientSettings>
+                                    <MasterTableView AutoGenerateColumns="False" DataKeyNames="ImageID" DataSourceID="SqlDataSource1"
+                                        CommandItemDisplay="Top" EditMode="InPlace" CommandItemSettings-AddNewRecordText="Agregar Foto!">
+                                        <CommandItemSettings AddNewRecordText="Agregar Foto!" ExportToPdfText="Export to PDF"></CommandItemSettings>
+                                        <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column"></RowIndicatorColumn>
+                                        <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column"></ExpandCollapseColumn>
+                                        <Columns>
+                                            <telerik:GridEditCommandColumn ButtonType="ImageButton"></telerik:GridEditCommandColumn>
+                                            <%--<telerik:GridClientDeleteColumn ButtonType="ImageButton"></telerik:GridClientDeleteColumn>--%>
+                                            <telerik:GridButtonColumn CommandName="Delete" UniqueName="DeleteColumn" ButtonType="ImageButton" ConfirmTextFields="ImgeID" ConfirmTextFormatString="Está seguro que deseas eliminar la imagen:<b>'{0}'</b>" ConfirmTitle="Atención" ConfirmDialogType="RadWindow"></telerik:GridButtonColumn>
+                                            <telerik:GridTemplateColumn HeaderText="Nombre del archivo" UniqueName="ImageName" DataField="ImageName">
+                                            <ItemTemplate>
+                                            <asp:Label runat="server" ID="LblImage" Text='<%# Eval("ImageName") %>'></asp:Label>
+                                            </ItemTemplate>
+                                            <EditItemTemplate>
+                                               <telerik:RadAsyncUpload ID="RadUpload1" runat="server"
+                                                    TargetFolder="Images/Photos" AllowedFileExtensions="jpg,jpeg,png"
+                                                    OverwriteExistingFiles="false"
+                                                    ControlObjectsVisibility="None">
+                                                </telerik:RadAsyncUpload>
+                                            </EditItemTemplate>
+                                            </telerik:GridTemplateColumn>
+                                             <telerik:GridBoundColumn DataField="ImageID" DataType="System.Int32"  FilterControlAltText="Filter ID column" HeaderText="ImageId" ReadOnly="True" SortExpression="ImageId" UniqueName="ImageID" Visible="true">
+                                            </telerik:GridBoundColumn>
+                                            <telerik:GridBoundColumn DataField="status" DataType="System.String"  FilterControlAltText="Filter ID column" HeaderText="Estatus" ReadOnly="False" SortExpression="status" UniqueName="status">
+                                            </telerik:GridBoundColumn>
+                                        <telerik:GridImageColumn DataImageUrlFields="ImageName" UniqueName="Photo" DataType="System.String" DataImageUrlFormatString="~/Images/Photos/{0}" ImageAlign="Middle" ImageHeight="100px" HeaderText="Foto">
+                                        </telerik:GridImageColumn>
+                                        </Columns>
+                                        <EditFormSettings>
+                                        <PopUpSettings Modal="true" Height="500px" Width="400px" />
+                                        <EditColumn UniqueName="EditCommandColumn1">
+                                        </EditColumn>
+                                        </EditFormSettings>
+                                    </MasterTableView>
+                                    <FilterMenu EnableImageSprites="False"></FilterMenu>
+                                </telerik:RadGrid>
 
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>"
-                                            DeleteCommand="DELETE FROM [Images] WHERE [ImageID] = @ImageID"
-                                            InsertCommand="INSERT INTO [Images] ([ImageName],UserID,status) VALUES (@ImageName,@UserID,1)"
-                                            SelectCommand="SELECT * FROM [Images]"
-                                            UpdateCommand="Update Images set status=@status where ImageId=@ImageId">
-                                            <DeleteParameters>
-                                                <asp:Parameter Name="ImageID" Type="Int32" />
-                                            </DeleteParameters>
-                                            <SelectParameters>
-                                                <asp:SessionParameter Name="UserID" Type="Int32" SessionField="UserID" />
-                                            </SelectParameters>
-                                            <UpdateParameters>
-                                                <asp:Parameter Name="ImageID" Type="Int32" />
-                                                <asp:Parameter Name="status" Type="String" />
-                                            </UpdateParameters>
-                                            <InsertParameters>
-                                                <asp:Parameter Name="ImageName" Type="String" />
-                                                <asp:Parameter Name="UserID" Type="String" />
-                                            </InsertParameters>
-                                        </asp:SqlDataSource>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </telerik:RadPageView>
-                </telerik:RadMultiPage>
-            </td>
-        </tr>
-    </table>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>"
+                                DeleteCommand="DELETE FROM [Images] WHERE [ImageID] = @ImageID" 
+                                InsertCommand="INSERT INTO [Images] ([ImageName],UserID,status) VALUES (@ImageName,@UserID,1)"
+                                SelectCommand="SELECT * FROM [Images]" 
+                                UpdateCommand="Update Images set status=@status where ImageId=@ImageId"  >
+                                    <DeleteParameters>
+                                        <asp:Parameter Name="ImageID" Type="Int32" />
+                                    </DeleteParameters>
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="UserID" Type="Int32" SessionField="UserID" />
+                                    </SelectParameters>
+                                    <UpdateParameters>
+                                        <asp:Parameter Name="ImageID" Type="Int32" />
+                                        <asp:Parameter Name="status" Type="String" />
+                                    </UpdateParameters>
+                                    <InsertParameters>
+                                        <asp:Parameter Name="ImageName" Type="String" />
+                                        <asp:Parameter Name="UserID" Type="String" />
+                                    </InsertParameters>
+                                </asp:SqlDataSource>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </telerik:RadPageView>
+        </telerik:RadMultiPage>
+    </td>
+  </tr>
+ </table>
 
 </asp:Content>
+

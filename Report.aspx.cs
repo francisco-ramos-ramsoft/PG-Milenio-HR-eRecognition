@@ -9,7 +9,7 @@ public partial class Report : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        dtBegin.SelectedDate = Convert.ToDateTime("2021-09-01");
+        dtBegin.SelectedDate = Convert.ToDateTime("2016-08-01");
         dtEnd.SelectedDate = DateTime.Now;
     }
     protected void RadComboBox1_SelectedIndexChanged(object sender, Telerik.Web.UI.RadComboBoxSelectedIndexChangedEventArgs e)

@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Report.aspx.cs" Inherits="Report" %>
 
-
-<%@ Register Assembly="Telerik.ReportViewer.WebForms, Version=15.2.21.915, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" Namespace="Telerik.ReportViewer.WebForms" TagPrefix="telerik" %>
+<%@ Register Assembly="Telerik.ReportViewer.WebForms, Version=6.2.12.1017, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" Namespace="Telerik.ReportViewer.WebForms" TagPrefix="telerik" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -24,7 +23,7 @@
                                     <tr>
                                         <td>Inicio:</td>
                                         <td>
-                                            <telerik:RadDatePicker ID="dtBegin" runat="server" Culture="es-MX" SelectedDate="2016-08-01" Skin="Metro">
+                                            <telerik:RadDatePicker ID="dtBegin" runat="server" Culture="es-MX"  SelectedDate="2016-08-01" Skin="Metro" >
                                                 <Calendar UseRowHeadersAsSelectors="False" UseColumnHeadersAsSelectors="False" ViewSelectorText="x" Skin="Metro"></Calendar>
                                                 <DateInput DisplayDateFormat="yyyy-MM-dd" DateFormat="yyyy-MM-dd" LabelWidth="40%"></DateInput>
                                                 <DatePopupButton ImageUrl="" HoverImageUrl=""></DatePopupButton>
@@ -32,7 +31,7 @@
                                         </td>
                                         <td>Fin:</td>
                                         <td>
-                                            <telerik:RadDatePicker ID="dtEnd" runat="server" Culture="es-MX" Skin="Metro">
+                                            <telerik:RadDatePicker ID="dtEnd" runat="server" Culture="es-MX" Skin="Metro" >
                                                 <Calendar UseRowHeadersAsSelectors="False" UseColumnHeadersAsSelectors="False" ViewSelectorText="x" Skin="Metro"></Calendar>
                                                 <DateInput DisplayDateFormat="yyyy-MM-dd" DateFormat="yyyy-MM-dd" LabelWidth="40%"></DateInput>
                                                 <DatePopupButton ImageUrl="" HoverImageUrl=""></DatePopupButton>
@@ -51,11 +50,11 @@
                                         <td>Manager:</td>
                                         <td>
                                             <telerik:RadComboBox ID="RadComboBox2" HighlightTemplatedItems="True" Filter="Contains" Width="250px" runat="server" DataSourceID="dsManagers" DataTextField="Name" DataValueField="Name" Skin="Metro" Height="300px"></telerik:RadComboBox>
-                                            <asp:SqlDataSource ID="dsManagers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="Select '_Todos' Name Union select Name from vUsers where rol = 'Administrador'"></asp:SqlDataSource>
+                                            <asp:SqlDataSource ID="dsManagers" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="Select '_Todos' Name Union select Name from vUsers where rol = 'Admin'"></asp:SqlDataSource>
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
+                            </div>                            
                         </td>
                     </tr>
                 </table>

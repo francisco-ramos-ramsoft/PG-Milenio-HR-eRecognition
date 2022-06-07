@@ -6,7 +6,7 @@
     <table class="table" align="center" style="width: 1100px">
         <tr>
             <td style="height: 7%" colspan="3">
-                <img alt="" src="img2/misrecs01.png" height="75"/>
+                <img alt="" src="img2/misrecs01.png" height="100px" />
             </td>
             <td colspan="2" style="vertical-align: middle">
                 <table style="color: #FFFFFF; background-color: #006699">
@@ -24,7 +24,7 @@
             <td style="width: 300px; vertical-align: top;">
                 <table align="center">
                     <tr>
-                        <td style="height: 50px; background-image: url(img2/misrecs02.png); background-repeat: no-repeat; background-size: cover;">&nbsp;</td>
+                        <td style="height: 30px; background-image: url(img2/misrecs02.png); background-repeat: no-repeat; background-size: cover">&nbsp;</td>
                     </tr>
                     <tr>
                         <td>
@@ -33,21 +33,21 @@
                                 <MasterTableView AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="dsMyRecsDisp">
                                     <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
                                     <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </RowIndicatorColumn>
                                     <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </ExpandCollapseColumn>
                                     <Columns>
-                                        <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ItemStyle-CssClass="imgAdmin" ImageWidth="120px" HeaderText="Rec" ItemStyle-Width="7%" HeaderStyle-Width="7%">
+                                        <telerik:GridImageColumn DataImageUrlFields="ID" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ImageHeight="70px" ImageWidth="120px" HeaderText="Rec">
                                         </telerik:GridImageColumn>
-                                        <telerik:GridBoundColumn DataField="Asignadas" DataType="System.Int32" FilterControlAltText="Filter Asignadas column" HeaderText="Asignadas" SortExpression="Asignadas" UniqueName="Asignadas" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Asignadas" DataType="System.Int32" FilterControlAltText="Filter Asignadas column" HeaderText="Asignadas" SortExpression="Asignadas" UniqueName="Asignadas">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Extras" DataType="System.Int32" FilterControlAltText="Filter Extras column" HeaderText="Extras" ReadOnly="True" SortExpression="Extras" UniqueName="Extras" Visible="false" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Extras" DataType="System.Int32" FilterControlAltText="Filter Extras column" HeaderText="Extras" ReadOnly="True" SortExpression="Extras" UniqueName="Extras" Visible="false">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Entregadas" DataType="System.Int32" FilterControlAltText="Filter Entregadas column" HeaderText="Entregadas" ReadOnly="True" SortExpression="Entregadas" UniqueName="Entregadas" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Entregadas" DataType="System.Int32" FilterControlAltText="Filter Entregadas column" HeaderText="Entregadas" ReadOnly="True" SortExpression="Entregadas" UniqueName="Entregadas">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Total" DataType="System.Int32" FilterControlAltText="Filter Total column" HeaderText="Disponibles" ReadOnly="True" SortExpression="Total" UniqueName="Total" ItemStyle-Width="2%" HeaderStyle-Width="2%">
+                                        <telerik:GridBoundColumn DataField="Total" DataType="System.Int32" FilterControlAltText="Filter Total column" HeaderText="Disponibles" ReadOnly="True" SortExpression="Total" UniqueName="Total">
                                         </telerik:GridBoundColumn>
                                     </Columns>
                                     <EditFormSettings>
@@ -78,20 +78,22 @@
                             <telerik:RadGrid ID="RadGrid2" runat="server" DataSourceID="dsMyBlades" CellSpacing="0" GridLines="None" Height="350px" Width="290px">
                                 <MasterTableView AutoGenerateColumns="False" DataSourceID="dsMyBlades" ShowFooter="True">
                                     <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+
                                     <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </RowIndicatorColumn>
+
                                     <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </ExpandCollapseColumn>
                                     <Columns>
-                                        <telerik:GridImageColumn DataImageUrlFields="[Blade]" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ItemStyle-CssClass="imgAdmin" ImageWidth="100px" HeaderText="" ItemStyle-Width="7%" HeaderStyle-Width="7%">
+                                        <telerik:GridImageColumn DataImageUrlFields="[Blade]" DataType="System.String" DataImageUrlFormatString="~/Images/Recs/{0}.png" ImageAlign="Middle" ImageHeight="70px" ImageWidth="120px" HeaderText="">
                                         </telerik:GridImageColumn>
-                                        <telerik:GridBoundColumn DataField="Total" DataType="System.Int32" FilterControlAltText="Filter Total column" HeaderText="Total" SortExpression="Total" UniqueName="Total" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Total" DataType="System.Int32" FilterControlAltText="Filter Total column" HeaderText="Total" SortExpression="Total" UniqueName="Total">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Valor" DataType="System.Int32" FilterControlAltText="Filter Valor column" HeaderText="Valor" SortExpression="Valor" UniqueName="Valor" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Valor" DataType="System.Int32" FilterControlAltText="Filter Valor column" HeaderText="Valor" SortExpression="Valor" UniqueName="Valor">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Puntos" DataType="System.Int32" FilterControlAltText="Filter Puntos column" HeaderText="Puntos" SortExpression="Puntos" UniqueName="Puntos" Aggregate="Sum" FooterAggregateFormatString="Puntos Recibidos: {0}" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Puntos" DataType="System.Int32" FilterControlAltText="Filter Puntos column" HeaderText="Puntos" SortExpression="Puntos" UniqueName="Puntos" Aggregate="Sum" FooterAggregateFormatString="Puntos Recibidos: {0}">
                                         </telerik:GridBoundColumn>
                                     </Columns>
                                     <EditFormSettings>
@@ -125,19 +127,19 @@
                                     <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
 
                                     <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </RowIndicatorColumn>
 
                                     <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                                        <HeaderStyle Width="10px"></HeaderStyle>
+                                        <HeaderStyle Width="20px"></HeaderStyle>
                                     </ExpandCollapseColumn>
 
                                     <Columns>
-                                        <telerik:GridBoundColumn DataField="Fecha" DataType="System.DateTime" FilterControlAltText="Filter Fecha column" HeaderText="Fecha" SortExpression="Fecha" UniqueName="Fecha" ItemStyle-Width="5%" HeaderStyle-Width="5%">
+                                        <telerik:GridBoundColumn DataField="Fecha" DataType="System.DateTime" FilterControlAltText="Filter Fecha column" HeaderText="Fecha" SortExpression="Fecha" UniqueName="Fecha">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Obsequio" FilterControlAltText="Filter Obsequio column" HeaderText="Articulo" SortExpression="Obsequio" UniqueName="Obsequio" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Obsequio" FilterControlAltText="Filter Obsequio column" HeaderText="Articulo" SortExpression="Obsequio" UniqueName="Obsequio">
                                         </telerik:GridBoundColumn>
-                                        <telerik:GridBoundColumn DataField="Puntos" DataType="System.Int32" FilterControlAltText="Filter Puntos column" HeaderText="Puntos" SortExpression="Puntos" UniqueName="Puntos" Aggregate="Sum" FooterAggregateFormatString="Puntos Canjeados: {0}" ItemStyle-Width="3%" HeaderStyle-Width="3%">
+                                        <telerik:GridBoundColumn DataField="Puntos" DataType="System.Int32" FilterControlAltText="Filter Puntos column" HeaderText="Puntos" SortExpression="Puntos" UniqueName="Puntos" Aggregate="Sum" FooterAggregateFormatString="Puntos Canjeados: {0}">
                                         </telerik:GridBoundColumn>
                                     </Columns>
 

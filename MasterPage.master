@@ -4,23 +4,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>..:: Reconocimientos Alce Blanco ::..</title>
+    <title>..:: Reconocimientos Milenio ::..</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script src="scripts.js" type="text/javascript"></script>
     <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
     <link href="print.css" rel="stylesheet" type="text/css" media="print" />
     <style type="text/css">
-        .auto-style1 {
-            height: 50px; /*background-image: url('./img/LogoMilenio_medium.png');*/
-            width: 860px;
-            background-repeat: no-repeat;
-        }
+        .auto-style1 { height: 50px; /*background-image: url('./img/LogoMilenio_medium.png');*/ width: 860px; background-repeat: no-repeat; }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
         <div>
             <table align="center">
                 <tr>
@@ -44,31 +39,30 @@
                                         </table>
                                     </td>
                                     <td class="header05">
-                                        <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/img2/btn_Master12.png" Height="30px" PostBackUrl="~/MyProfile.aspx" CssClass="btn" />
+                                        <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/img2/btn_Master12.png" Height="30px" PostBackUrl="~/MyProfile.aspx" />
                                     </td>
                                     <td class="header05">
-                                        <asp:ImageButton ID="ImageButton7" runat="server" OnClick="btnClose_Click" ImageUrl="~/img2/btn_Master10.png" Height="30px" CssClass="btn" />
+                                        <asp:ImageButton ID="ImageButton7" runat="server" OnClick="btnClose_Click" ImageUrl="~/img2/btn_Master10.png" Height="30px" />
 
                                     </td>
                                 </tr>
                             </table>
                         </div>
-
                         <div id="Menu" class="menu">
                             <table style="width: 100%; height: 50px">
                                 <tr>
                                     <td style="width: 70%; vertical-align: bottom;">
-                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img2/btn_Master01.png" Height="30px" PostBackUrl="~/Main.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img2/btn_Master02.png" Height="30px" PostBackUrl="~/Blade.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/img2/btn_Master11.png" Height="33px" ImageAlign="AbsBottom" PostBackUrl="~/MyPage.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img2/btn_Master03.png" Height="30px" PostBackUrl="~/Catalog.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/img2/btn_Master04.png" Height="30px" PostBackUrl="~/Reports.aspx" Visible="false" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/img2/btn_Master05.png" Height="30px" PostBackUrl="~/Change2.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/img2/btn_Master06.png" Height="30px" PostBackUrl="~/Admin.aspx" CssClass="btn" />
+                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img2/btn_Master01.png" Height="30px" PostBackUrl="~/Main.aspx" />
+                                        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img2/btn_Master02.png" Height="30px" PostBackUrl="~/Blade.aspx" />
+                                        <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/img2/btn_Master11.png" Height="30px" PostBackUrl="~/MyPage.aspx" />
+                                        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img2/btn_Master03.png" Height="30px" PostBackUrl="~/Catalog.aspx" />
+                                        <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/img2/btn_Master04.png" Height="30px" PostBackUrl="~/Reports.aspx"  Visible="false"/>
+                                        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/img2/btn_Master05.png" Height="30px" PostBackUrl="~/Change2.aspx" />
+                                        <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/img2/btn_Master06.png" Height="30px" PostBackUrl="~/Admin.aspx" />
                                     </td>
                                     <td style="text-align: right; vertical-align: top">
-                                        <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/img2/btn_Master09.png" Height="35px" PostBackUrl="~/Tips.aspx" CssClass="btn" />
-                                        <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/img2/btn_Master08.png" Height="35px" PostBackUrl="~/About.aspx" CssClass="btn" />
+                                        <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/img2/btn_Master09.png" Height="35px" PostBackUrl="~/Tips.aspx" />
+                                        <asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/img2/btn_Master08.png" Height="35px" PostBackUrl="~/About.aspx" />
                                     </td>
                                 </tr>
                             </table>
@@ -79,17 +73,17 @@
                             <telerik:RadAjaxLoadingPanel ID="LoadingPanel1" runat="server" Transparency="50" Skin="Metro">
                             </telerik:RadAjaxLoadingPanel>
                             <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="LoadingPanel1">
-                                <asp:ContentPlaceHolder ID="ContentBodyMain" runat="server">
-                                </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="ContentBodyMain" runat="server">
+                            </asp:ContentPlaceHolder>
                             </telerik:RadAjaxPanel>
                             <asp:ContentPlaceHolder ID="ContentReports" runat="server">
                             </asp:ContentPlaceHolder>
                         </div>
                     </td>
                     <td style="width: 180px">
-                        <div id="NoPrint" style="direction:rtl">
-                            <asp:Image ID="imgesq" runat="server" ImageUrl="img2/people01.png" Style="float: right; text-align:center; height: 680px; padding-right:0; margin-right:0;" />
-                        </div>
+                        <div id="NoPrint">
+                        <asp:Image id="imgesq" runat="server" ImageUrl="img2/people01.png" style="float: right; text-align: center; height: 680px;"/>
+                            </div>
                     </td>
                 </tr>
                 <tr>
@@ -105,8 +99,6 @@
                     </td>
                 </tr>
             </table>
-
-
         </div>
     </form>
 </body>

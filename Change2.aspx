@@ -77,7 +77,7 @@
                                 <telerik:RadComboBox ID="cbbGifts" runat="server" Width="300px" Height="300px" DataSourceID="dsGifts" DataTextField="Name" DataValueField="ID"
                                     Filter="Contains" MarkFirstMatch="true" EmptyMessage="Selecciona un obsequio" Skin="Metro" AutoPostBack="true" OnSelectedIndexChanged="cbbGifts_SelectedIndexChanged">
                                 </telerik:RadComboBox>
-                                <asp:SqlDataSource ID="dsGifts" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name], [Descrip], [Value] FROM [Gifts] Where [Active]=1"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="dsGifts" runat="server" ConnectionString="<%$ ConnectionStrings:Server %>" SelectCommand="SELECT [ID], [Name], [Descrip], [Value] FROM [Gifts] Where [Active]=1 and [Type]='Fastenal'"></asp:SqlDataSource>
                             </td>
                         </tr>
                         <tr>
@@ -106,7 +106,7 @@
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align: center">
-                                <asp:Image runat="server" ID="GiftPrev" ImageUrl="~/images/spacer.gif" Height="180px" CssClass="ImgArticulo"/>
+                                <asp:Image runat="server" ID="GiftPrev" ImageUrl="~/images/spacer.gif" Height="180px" />
                             </td>
                         </tr>
                     </table>

@@ -6,7 +6,7 @@
     <table align="center" class="table">
         <tr>
             <td colspan="2">
-                <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/cc01.png" Height="148px" CssClass="zoom"/>
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/img2/cc01.png" Height="148px" />
             </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@
             </td>
             <td style="height: 370px; width: 900px">
                 <asp:Panel ID="Panel1" runat="server" Width="900px" Height="370px" ScrollBars="Vertical">
-                    <telerik:RadListView ID="RadListView1" runat="server" DataSourceID="dsHR" DataKeyNames="ID" Skin="Metro" Width="900px" Height="370px" OnSelectedIndexChanged="RadListView1_SelectedIndexChanged" PageSize="10">
+                    <telerik:RadListView ID="RadListView1" runat="server" DataSourceID="dsHR" DataKeyNames="ID" Skin="Metro" Width="900px" Height="370px" OnSelectedIndexChanged="RadListView1_SelectedIndexChanged" PageSize="20">
                         <LayoutTemplate>
                             <div class="RadListView RadListViewFloated RadListView_Metro">
                                 <div class="rlvFloated">
@@ -53,36 +53,36 @@
                             </div>
                         </LayoutTemplate>
                         <ItemTemplate>
-                            <div class="rlvI" style="height: 220px">
-                                <table style="border-block-end-color:InactiveBorder">
+                            <div class="rlvI" style="height: 230px">
+                                <table>
                                     <tr>
                                         <td colspan="2">
-                                            <table style="border-block-end-color:InactiveBorder">
+                                            <table>
                                                 <tr>
-                                                    <td style="vertical-align:auto;">
-                                                        <asp:Image runat="server" ID="Image3" ImageUrl='<%# Eval("Type").ToString() != "HR" ? "images/outstock.png" : "images/spacer.gif"%>' Height='<%# Eval("Type").ToString() != "HR" ? 45 : 1%>' />
+                                                    <td style="vertical-align: top">
+                                                        <asp:Image runat="server" ID="Image3" ImageUrl='<%# Eval("Total").ToString() == "0" ? "images/outstock.png" : "images/spacer.gif"%>' Height='<%# Eval("Total").ToString() == "0" ? 60 : 1%>' />
                                                     </td>
-                                                    <td style="text-align: center; vertical-align:central">
-                                                        <asp:Image runat="server" ID="imgPrev" ImageUrl='<%# Eval("ID", "~/images/Gifts/{0}.png") %>' Height="125px" />
+                                                    <td style="text-align: center; vertical-align: middle;">
+                                                        <asp:Image runat="server" ID="imgPrev" ImageUrl='<%# Eval("ID", "~/images/Gifts/{0}.png") %>' Height="160px" />
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="align-content:center">
-                                            <asp:Image runat="server" ID="Image2" ImageUrl='<%# Eval("Type").ToString() == "HR" ? Eval("Value", "~/images/Nums/h{0}.png") : Eval("Value","~/images/Nums/f{0}.png")%>' Height="40px" />
+                                        <td>
+                                            <asp:Image runat="server" ID="Image2" ImageUrl='<%# Eval("Type").ToString() == "HR" ? Eval("Value", "~/images/Nums/h{0}.png") : Eval("Value","~/images/Nums/f{0}.png")%>' Height="48px" />
                                         </td>
                                         <td>
-                                            <table style="border-block-end-color:InactiveBorder">
+                                            <table>
                                                 <tr>
-                                                    <td style="text-align:match-parent; font-size:smaller" colspan="2">
+                                                    <td style="text-align: center; font-size: x-small" colspan="2">
                                                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("Descrip") %>' Width="150px"></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align:match-parent" colspan="2">
-                                                        <asp:ImageButton ID="ImageButton1" runat="server" PostBackUrl='<%# string.Format("Request.aspx?GID={0}", Eval("ID")) %>' ImageUrl="~/img2/btn_master03.png" Height="30px" Visible='<%# Eval("Active").ToString() == "1" ? false : true%>' CssClass="btn"/>
+                                                    <td style="text-align: center" colspan="2">
+                                                        <asp:ImageButton ID="ImageButton1" runat="server" PostBackUrl='<%# string.Format("Request.aspx?GID={0}", Eval("ID")) %>' ImageUrl="~/img2/btn_master03.png" Height="24px" Visible='<%# Eval("Type").ToString() == "HR" ? true : false%>' />
                                                     </td>
                                                 </tr>
                                             </table>
